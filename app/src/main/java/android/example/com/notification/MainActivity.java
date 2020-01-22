@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             postDevicesCall.enqueue(new Callback<PostDevices>() {
                 @Override
                 public void onResponse(Call<PostDevices> call, Response<PostDevices> response) {
+
                     Toast.makeText(MainActivity.this,"Berhasil",Toast.LENGTH_LONG).show();
                 }
 
