@@ -9,6 +9,7 @@ import android.example.com.notification.Firebase.SharedPrefManager;
 import android.example.com.notification.Model.PostDevices;
 import android.example.com.notification.RestApi.ApiClient;
 import android.example.com.notification.RestApi.ApiInterface;
+import android.example.com.notification.RestApi.UtilsApi;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         nisn=findViewById(R.id.nisn);
         password=findViewById(R.id.password);
         buttonDisplayToken = (Button) findViewById(R.id.buttonDisplayToken);
-        apiInterface= ApiClient.getClient().create(ApiInterface.class);
+        apiInterface= UtilsApi.getAPIService();
         //adding listener to view
         buttonDisplayToken.setOnClickListener(this);
     }
