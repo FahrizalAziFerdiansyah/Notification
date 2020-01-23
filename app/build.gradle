@@ -4,6 +4,7 @@ apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 28
     defaultConfig {
+        buildConfigField("String", "URL", '"http://192.168.1.13/sdbadean/api/"')
         applicationId "android.example.com.notification"
         minSdkVersion 16
         targetSdkVersion 28
@@ -27,6 +28,8 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.6.2'
     implementation 'com.squareup.retrofit2:retrofit:2.0.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
