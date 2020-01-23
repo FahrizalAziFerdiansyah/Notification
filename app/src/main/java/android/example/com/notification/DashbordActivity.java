@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 public class DashbordActivity extends AppCompatActivity {
     TextView nama_siswa, nisn, menu1, menu2, menu3, menu4, menu;
-
     ImageView foto_siswa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

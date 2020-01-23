@@ -2,6 +2,8 @@ package android.example.com.notification;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
+import android.example.com.notification.RestApi.ApiInterface;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -16,6 +18,11 @@ public class LoginActivity extends AppCompatActivity {
     private EditText ET_email, ET_password;
     private ImageView logo;
     private Animation smalltobig, btta, btta2;
+
+
+
+    ApiInterface mApiInterface;
+    SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

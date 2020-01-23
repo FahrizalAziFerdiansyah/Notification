@@ -1,6 +1,7 @@
 package android.example.com.notification.RestApi;
 
 import android.example.com.notification.Model.PostDevices;
+import android.example.com.notification.Model.Siswa;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -13,4 +14,11 @@ public interface ApiInterface {
     Call<PostDevices> postDevice(@Field("nisn")String nisn,
                                  @Field("password") String password,
                                  @Field("token") String token);
+
+    @FormUrlEncoded
+    @POST("LoginOrtu")
+    Call<Siswa> LoginOrtu(@Field("nisn")String nisn,
+                           @Field("password") String password,
+                           @Field("token") String token);
+
 }
