@@ -9,6 +9,20 @@ public class Siswa {
     String result;
     @SerializedName("message")
     String message;
+    @SerializedName("id_device")
+    String id_device;
+    @SerializedName("nisn")
+    String nisn;
+    @SerializedName("password")
+    String password;
+    @SerializedName("token")
+    String token;
+    @SerializedName("nama_siswa")
+    String nama_siswa;
+    @SerializedName("keterangan")
+    String keterangan;
+    @SerializedName("tanggal_absensi")
+    String tanggal_absensi;
 
     public String getStatus() {
         return status;
