@@ -117,7 +117,7 @@
         android:background="@drawable/bg_btn_primary"
         android:text="Masuk"
         android:textAllCaps="false"
-        android:textColor="#80744B"
+        android:textColor="#FFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

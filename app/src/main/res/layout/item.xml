@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/card_info"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#E9E7E7"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="250dp">
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/brochure"
+                android:scaleType="centerCrop"/>
+            <TextView
+                android:id="@+id/titlecard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#262626"
+                android:layout_below="@+id/image"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="16dp"
+                android:text="RANDOM"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/desc_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titlecard"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:maxLines="2"
+                android:drawablePadding="10dp"
+                android:ellipsize="end"
+                android:text="Description" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
