@@ -57,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         btnlogin.startAnimation(btta2);
         ET_nisn.startAnimation(btta2);
         ET_password.startAnimation(btta2);
+        //i
         mApiInterface = UtilsApi.getAPIService();
         sharedPreferences = LoginActivity.this.getSharedPreferences("remember", Context.MODE_PRIVATE);
 
@@ -65,15 +66,17 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
             String nisn = ET_nisn.getText().toString();
             String password = ET_password.getText().toString();
+            //required
             if(nisn.equals("")) {
                 Toast.makeText(LoginActivity.this, "NISN Harus Diisi", Toast.LENGTH_SHORT).show();
             }else  if(password.equals("")) {
                 Toast.makeText(LoginActivity.this, "Password Harus Diisi", Toast.LENGTH_SHORT).show();
             } else {
+                //dialog
                 progressDialog =new ProgressDialog(LoginActivity.this);
                 progressDialog.setMessage("Mohon Tunggu...");
                 progressDialog.show();
-
+                //login
                 retrofit2.Call<Siswa> postLogin=mApiInterface.postLogin(nisn,password);
                 postLogin.enqueue(new Callback<Siswa>() {
                     @Override
@@ -87,8 +90,10 @@ public class LoginActivity extends AppCompatActivity {
 
                     }
                 });
+             //batas else required
             }
             }
+        //batas klik login
         });
 
     }
