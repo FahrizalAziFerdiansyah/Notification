@@ -4,12 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.example.com.notification.Fragment.HomeFragment;
 import android.example.com.notification.Model.Siswa;
 import android.example.com.notification.RestApi.ApiClient;
 import android.example.com.notification.RestApi.ApiInterface;
 import android.example.com.notification.RestApi.UtilsApi;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -82,12 +86,48 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<Siswa> call, Response<Siswa> response) {
                         progressDialog.dismiss();
+                        String id_device = response.body().getId_device();
+                        String nisn = response.body().getNisn();
+                        String token = response.body().getToken();
+                        String nama_siswa = response.body().getNama_siswa();
+                        String keterangan = response.body().getKeterangan();
+                        String tanggal_absensi = response.body().getTanggal_absensi();
+                        String waktu_mulai = response.body().getWaktu_mulai();
+                        String waktu_selesai = response.body().getWaktu_selesai();
+                        String nama_pelajaran = response.body().getNama_pelajaran();
+                        String nama_rombel = response.body().getNama_rombel();
+                        String nama_gtk = response.body().getNama_gtk();
+
+                        Log.e("Berhasil Login", "berhasil"+nisn);
+                        if(TextUtils.isEmpty(id_device)){
+                            Toast.makeText(LoginActivity.this,"NISN atau Password salah", Toast.LENGTH_LONG).show();
+                        } else{
+                            Toast.makeText(LoginActivity.this,"Berhasil Login", Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(LoginActivity.this, HomeFragment.class);
+                            SharedPreferences.Editor editor =sharedPreferences.edit();
+                            editor.putString("id_device", id_device);
+                            editor.putString("nisn", nisn);
+                            editor.putString("token", token);
+                            editor.putString("nama_siswa", nama_siswa);
+                            editor.putString("keterangan", keterangan);
+                            editor.putString("tanggal_absensi", tanggal_absensi);
+                            editor.putString("waktu_mulai", waktu_mulai);
+                            editor.putString("waktu_selesai", waktu_selesai);
+                            editor.putString("nama_pelajaran", nama_pelajaran);
+                            editor.putString("nama_rombel", nama_rombel);
+                            editor.putString("nama_gtk", nama_gtk);
+                            editor.apply();
+                            startActivity(intent);
+
+
+                        }
 
                     }
 
                     @Override
                     public void onFailure(Call<Siswa> call, Throwable t) {
-
+                        progressDialog.dismiss();
+                        Toast.makeText(LoginActivity.this, "Gagal Login", Toast.LENGTH_LONG).show();
                     }
                 });
              //batas else required

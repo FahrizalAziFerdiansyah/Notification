@@ -19,6 +19,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.example.com.notification.R;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -91,7 +93,18 @@ public class HomeFragment extends Fragment {
         rv_card.setAdapter(adapter);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
         rv_card.setLayoutManager(mLayoutManager);
+
+
+
         return view;
+    }
+    private void runAnim(RecyclerView r) {
+        Context context = r.getContext();
+        LayoutAnimationController layoutAnimationController = AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_fall_down);
+        r.setLayoutAnimation(layoutAnimationController);
+        r.getAdapter().notifyDataSetChanged();
+        r.scheduleLayoutAnimation();
+
     }
 
 
