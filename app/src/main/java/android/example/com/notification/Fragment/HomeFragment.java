@@ -3,7 +3,11 @@ package android.example.com.notification.Fragment;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.example.com.notification.Adapter.InfoAdapter;
+import android.example.com.notification.Model.GetInfo;
 import android.example.com.notification.Model.Info;
+import android.example.com.notification.RestApi.ApiClient;
+import android.example.com.notification.RestApi.ApiInterface;
+import android.example.com.notification.RestApi.UtilsApi;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +30,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class HomeFragment extends Fragment {
@@ -32,7 +42,11 @@ public class HomeFragment extends Fragment {
     ImageView foto_siswa;
     RecyclerView rv_card;
     ArrayList<Info> infoModelArrayList = new ArrayList<>();
+    InfoAdapter infoAdapter;
     Context mContext;
+    ApiInterface mApiInterface;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -52,8 +66,11 @@ public class HomeFragment extends Fragment {
         menu4 = view.findViewById(R.id.menu4);
         menu = view.findViewById(R.id.mainMenu);
         rv_card = view.findViewById(R.id.rv_info);
-
-
+        mContext = getContext();
+        mApiInterface = UtilsApi.getAPIService();
+        rv_card.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
+        rv_card.setLayoutManager(mLayoutManager);
 
 
 
@@ -73,30 +90,32 @@ public class HomeFragment extends Fragment {
         menu3.setTypeface(MMedium);
         menu4.setTypeface(MMedium);
 
-        Info model1 = new Info("a","aa");
-        Info model2 = new Info("a","aa");
-        Info model3 = new Info("a","aa");
-        Info model4 = new Info("a","aa");
-        Info model5 = new Info("a","aa");
-        Info model6 = new Info("a","aa");
-
-        infoModelArrayList.add(model1);
-        infoModelArrayList.add(model2);
-        infoModelArrayList.add(model3);
-        infoModelArrayList.add(model4);
-        infoModelArrayList.add(model5);
-        infoModelArrayList.add(model6);
 
 
 
-        InfoAdapter adapter = new InfoAdapter(getActivity().getApplicationContext(),infoModelArrayList);
-        rv_card.setAdapter(adapter);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
-        rv_card.setLayoutManager(mLayoutManager);
 
 
-
+        refresh();
         return view;
+    }
+    public void refresh() {
+        Call<GetInfo> ListInfo = mApiInterface.getInfo();
+        ListInfo.enqueue(new Callback<GetInfo>() {
+            @Override
+            public void onResponse(Call<GetInfo> call, Response<GetInfo>
+                    response) {
+                List<Info> m = response.body().getListDataInfo();
+                Log.d("Retrofit Get", "Jumlah data Item: " +
+                        String.valueOf(m.size()));
+                mAdapter = new InfoAdapter(infoModelArrayList, getContext());
+                rv_card.setAdapter(mAdapter);
+            }
+
+            @Override
+            public void onFailure(Call<GetInfo> call, Throwable t) {
+                Log.e("Retrofit Get", t.toString());
+            }
+        });
     }
     private void runAnim(RecyclerView r) {
         Context context = r.getContext();
