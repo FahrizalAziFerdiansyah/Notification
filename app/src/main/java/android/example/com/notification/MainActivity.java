@@ -7,7 +7,6 @@ import retrofit2.Response;
 
 import android.example.com.notification.Firebase.SharedPrefManager;
 import android.example.com.notification.Model.PostDevices;
-import android.example.com.notification.RestApi.ApiClient;
 import android.example.com.notification.RestApi.ApiInterface;
 import android.example.com.notification.RestApi.UtilsApi;
 import android.os.Bundle;

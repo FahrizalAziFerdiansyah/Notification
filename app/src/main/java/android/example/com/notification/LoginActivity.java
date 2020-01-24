@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.example.com.notification.Fragment.HomeFragment;
 import android.example.com.notification.Model.Siswa;
-import android.example.com.notification.RestApi.ApiClient;
 import android.example.com.notification.RestApi.ApiInterface;
 import android.example.com.notification.RestApi.UtilsApi;
 import android.os.Bundle;
@@ -34,9 +33,6 @@ public class LoginActivity extends AppCompatActivity {
     private ImageView logo;
     private Animation smalltobig, btta, btta2;
     ProgressDialog progressDialog;
-
-
-
     ApiInterface mApiInterface;
     SharedPreferences sharedPreferences;
     @Override
@@ -79,9 +75,10 @@ public class LoginActivity extends AppCompatActivity {
                 //dialog
                 progressDialog =new ProgressDialog(LoginActivity.this);
                 progressDialog.setMessage("Mohon Tunggu...");
+                progressDialog.setCancelable(false);
                 progressDialog.show();
                 //login
-                retrofit2.Call<Siswa> postLogin=mApiInterface.postLogin(nisn,password);
+                retrofit2.Call<Siswa> postLogin= mApiInterface.postLogin(nisn,password);
                 postLogin.enqueue(new Callback<Siswa>() {
                     @Override
                     public void onResponse(Call<Siswa> call, Response<Siswa> response) {
@@ -98,7 +95,6 @@ public class LoginActivity extends AppCompatActivity {
                         String nama_rombel = response.body().getNama_rombel();
                         String nama_gtk = response.body().getNama_gtk();
 
-                        Log.e("Berhasil Login", "berhasil"+nisn);
                         if(TextUtils.isEmpty(id_device)){
                             Toast.makeText(LoginActivity.this,"NISN atau Password salah", Toast.LENGTH_LONG).show();
                         } else{
@@ -118,8 +114,6 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("nama_gtk", nama_gtk);
                             editor.apply();
                             startActivity(intent);
-
-
                         }
 
                     }
@@ -127,6 +121,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<Siswa> call, Throwable t) {
                         progressDialog.dismiss();
+                        Log.e("gagal", "gagal" + t);
                         Toast.makeText(LoginActivity.this, "Gagal Login", Toast.LENGTH_LONG).show();
                     }
                 });
