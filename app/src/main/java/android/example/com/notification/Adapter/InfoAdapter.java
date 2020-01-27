@@ -13,16 +13,22 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.InfoViewHolder>{
-    private Context context;
-    private ArrayList<Info> infoModelArrayList;
+     Context context;
+    ArrayList<Info> infoArrayList;
 
-    public InfoAdapter(Context context, ArrayList<Info> infoModelArrayList) {
+    public InfoAdapter(ArrayList<Info> listinfo, Context context) {
         this.context = context;
-        this.infoModelArrayList = infoModelArrayList;
+        infoArrayList = listinfo;
     }
+
 
     @NonNull
     @Override
@@ -33,10 +39,13 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.InfoViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull InfoViewHolder holder, int position) {
-        Info model = infoModelArrayList.get(position);
-
-        holder.titlecard.setText(model.getTittle());
-        holder.description.setText(model.getDesc());
+        Glide.with(context)
+                .load("http://192.168.43.103/sdbadean/vendor/assets/images/"+infoArrayList.get(position).getGambar())
+                .apply(new RequestOptions().transform(new RoundedCorners(50)))
+                .into(holder.gambar);
+        holder.judul.setText(infoArrayList.get(position).getJudul());
+        holder.tgl_publish.setText(infoArrayList.get(position).getTgl_publish());
+        holder.description.setText(infoArrayList.get(position).getDescription());
         holder.card_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,19 +57,20 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.InfoViewHolder
 
     @Override
     public int getItemCount() {
-        return infoModelArrayList.size();
+        return infoArrayList.size();
     }
 
     public class InfoViewHolder extends RecyclerView.ViewHolder{
-        CardView card_info;
-//        ImageView image;
-        TextView titlecard, description;
+        public CardView card_info;
+        public ImageView gambar;
+        public TextView judul, description, tgl_publish;
         public InfoViewHolder(@NonNull View itemView) {
             super(itemView);
             card_info = itemView.findViewById(R.id.card_info);
-//            image = itemView.findViewById(R.id.image);
-            titlecard = itemView.findViewById(R.id.titlecard);
-            description = itemView.findViewById(R.id.desc_card);
+            gambar = itemView.findViewById(R.id.image);
+            judul = itemView.findViewById(R.id.judul);
+            description = itemView.findViewById(R.id.description);
+            tgl_publish = itemView.findViewById(R.id.tgl_publish);
         }
     }
 }

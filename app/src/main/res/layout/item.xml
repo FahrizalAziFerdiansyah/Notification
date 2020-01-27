@@ -12,32 +12,44 @@
             android:layout_width="250dp"
             android:layout_height="250dp">
             <ImageView
-                android:id="@+id/image"
+                android:id="@+id/gambar"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:src="@drawable/brochure"
                 android:scaleType="centerCrop"/>
             <TextView
-                android:id="@+id/titlecard"
+                android:id="@+id/judul"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#262626"
-                android:layout_below="@+id/image"
+                android:layout_below="@+id/gambar"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="16dp"
                 android:text="RANDOM"
                 android:textSize="16sp" />
             <TextView
-                android:id="@+id/desc_card"
+                android:id="@+id/tgl_publish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/titlecard"
+                android:textColor="#262626"
+                android:layout_below="@+id/judul"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="16dp"
+                android:text="RANDOM"
+                android:textStyle="italic"
+                android:textSize="8sp" />
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tgl_publish"
                 android:layout_marginTop="3dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:maxLines="2"
                 android:drawablePadding="10dp"
                 android:ellipsize="end"
+                android:textSize="12sp"
                 android:text="Description" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
