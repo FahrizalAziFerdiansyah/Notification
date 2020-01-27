@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.example.com.notification.Activity.HomeActivity;
 import android.example.com.notification.Fragment.HomeFragment;
 import android.example.com.notification.Model.Siswa;
 import android.example.com.notification.RestApi.ApiInterface;
@@ -95,11 +96,12 @@ public class LoginActivity extends AppCompatActivity {
                         String nama_rombel = response.body().getNama_rombel();
                         String nama_gtk = response.body().getNama_gtk();
 
+                        Log.e("Berhasil Login", "Berhasil " +nisn+nama_siswa);
                         if(TextUtils.isEmpty(id_device)){
                             Toast.makeText(LoginActivity.this,"NISN atau Password salah", Toast.LENGTH_LONG).show();
                         } else{
                             Toast.makeText(LoginActivity.this,"Berhasil Login", Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(LoginActivity.this, HomeFragment.class);
+                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             SharedPreferences.Editor editor =sharedPreferences.edit();
                             editor.putString("id_device", id_device);
                             editor.putString("nisn", nisn);
