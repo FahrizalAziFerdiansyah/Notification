@@ -59,7 +59,7 @@ public class DaftarActivity extends AppCompatActivity implements View.OnClickLis
         cek.setOnClickListener(this);
 
         data_siswa = findViewById(R.id.data_siswa);
-        loadingView = findViewById(R.id.loading_spinner);
+       // loadingView = findViewById(R.id.v1);
 
         mApiInterface = UtilsApi.getAPIService();
         //------------------------------

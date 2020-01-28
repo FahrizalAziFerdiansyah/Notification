@@ -105,7 +105,7 @@ public class HomeFragment extends Fragment {
                     response) {
                 infoList = response.body().getListDataInfo();
                 Log.d("Retrofit Get", "Jumlah data Item: " + String.valueOf(infoList.size()));
-                mAdapter = new InfoAdapter(infoList, mContext);
+                mAdapter = new InfoAdapter(infoList, getContext());
                 rv_card.setAdapter(mAdapter);
                 runAnim(rv_card);
 
