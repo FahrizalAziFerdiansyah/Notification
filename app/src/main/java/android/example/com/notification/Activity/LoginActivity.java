@@ -28,7 +28,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-    private TextView Appname, subAppname;
+    private TextView Appname, subAppname, daftar;
     private Button btnlogin;
     private EditText ET_nisn, ET_password;
     private ImageView logo;
@@ -50,6 +50,15 @@ public class LoginActivity extends AppCompatActivity {
         btnlogin = findViewById(R.id.button);
         ET_nisn = findViewById(R.id.editText);
         ET_password = findViewById(R.id.editText2);
+
+        daftar=findViewById(R.id.daftar);
+        daftar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(LoginActivity.this,DaftarActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //pass anim
         logo.startAnimation(smalltobig);
@@ -100,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this,"NISN atau Password salah", Toast.LENGTH_LONG).show();
                         } else{
                             Toast.makeText(LoginActivity.this,"Berhasil Login", Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(LoginActivity.this, HomeFragment.class);
+                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             SharedPreferences.Editor editor =sharedPreferences.edit();
                             editor.putString("id_device", id_device);
                             editor.putString("nisn", nisn);

@@ -40,7 +40,7 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.InfoViewHolder
     @Override
     public void onBindViewHolder(@NonNull InfoViewHolder holder, int position) {
         Glide.with(context)
-                .load("http://192.168.43.103/sdbadean/vendor/assets/images/"+infoArrayList.get(position).getGambar())
+                .load("http://192.168.1.14/sdbadean/vendor/assets/images/"+infoArrayList.get(position).getGambar())
                 .apply(new RequestOptions().transform(new RoundedCorners(50)))
                 .into(holder.gambar);
         holder.judul.setText(infoArrayList.get(position).getJudul());

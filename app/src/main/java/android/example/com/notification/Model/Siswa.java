@@ -6,16 +6,33 @@ import android.os.Parcelable;
 import com.google.gson.annotations.SerializedName;
 
 public class Siswa  {
-    @SerializedName("status")
-    String status;
-    @SerializedName("result")
-    String result;
-    @SerializedName("message")
-    String message;
     @SerializedName("id_device")
     String id_device;
     @SerializedName("nisn")
     String nisn;
+    @SerializedName("nomor_induk_sn")
+    String nomor_induk_sn;
+    @SerializedName("tempat_lahir_siswa")
+    String tempat_lahir_siswa;
+    @SerializedName("tanggal_lahir_siswa")
+    String tanggal_lahir_siswa;
+
+    public String getTempat_lahir_siswa() {
+        return tempat_lahir_siswa;
+    }
+
+    public void setTempat_lahir_siswa(String tempat_lahir_siswa) {
+        this.tempat_lahir_siswa = tempat_lahir_siswa;
+    }
+
+    public String getTanggal_lahir_siswa() {
+        return tanggal_lahir_siswa;
+    }
+
+    public void setTanggal_lahir_siswa(String tanggal_lahir_siswa) {
+        this.tanggal_lahir_siswa = tanggal_lahir_siswa;
+    }
+
     @SerializedName("password")
     String password;
     @SerializedName("token")
@@ -37,28 +54,13 @@ public class Siswa  {
     @SerializedName("nama_gtk")
     String nama_gtk;
 
-    public String getStatus() {
-        return status;
+
+    public String getNomor_induk_sn() {
+        return nomor_induk_sn;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getResult() {
-        return result;
-    }
-
-    public void setResult(String result) {
-        this.result = result;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
+    public void setNomor_induk_sn(String nomor_induk_sn) {
+        this.nomor_induk_sn = nomor_induk_sn;
     }
 
     public String getId_device() {

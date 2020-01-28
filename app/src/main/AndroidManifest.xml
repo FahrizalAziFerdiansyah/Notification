@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".Activity.LoginActivity"></activity>
+        <activity android:name=".Activity.DaftarActivity"></activity>
+
+        <activity android:name=".Activity.HomeActivity"></activity>
 
         <service
             android:name=".Firebase.MyFirebaseMessagingService"
@@ -27,7 +29,7 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

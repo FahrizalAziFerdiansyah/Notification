@@ -1,6 +1,7 @@
 package android.example.com.notification.RestApi;
 
 import android.example.com.notification.Model.GetInfo;
+import android.example.com.notification.Model.GetSiswa;
 import android.example.com.notification.Model.PostDevices;
 import android.example.com.notification.Model.Siswa;
 
@@ -17,6 +18,10 @@ public interface ApiInterface {
     Call<PostDevices> postDevice(@Field("nisn")String nisn,
                                  @Field("password") String password,
                                  @Field("token") String token);
+
+    @FormUrlEncoded
+    @POST("RegisterDevice/cek")
+    Call<Siswa> postNisn(@Field("nisn") String nisn);
 
     @FormUrlEncoded
     @POST("LoginOrtu")

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFF"
-    tools:context=".LoginActivity">
+    tools:context=".Activity.LoginActivity">
 
     <View
         android:id="@+id/view"
@@ -59,18 +59,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Appname" />
 
-    <TextView
+    <RelativeLayout
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="36dp"
-        android:text="Masuk"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+    <TextView
         android:textColor="#585757"
         android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        android:layout_marginLeft="36dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masuk"
+         />
+    <TextView
+        android:layout_centerVertical="true"
+        android:id="@+id/daftar"
+        android:layout_alignParentRight="true"
+        android:text="Belum punya akun?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    </RelativeLayout>
 
     <EditText
         android:id="@+id/editText"
