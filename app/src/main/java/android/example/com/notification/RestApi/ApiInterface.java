@@ -13,7 +13,7 @@ import retrofit2.http.POST;
 
 public interface ApiInterface {
     @FormUrlEncoded
-    @POST("RegisterDevice/daftar")
+    @POST("RegisterDevice/index")
     Call<PostDevices> postDevice(@Field("nisn")String nisn,
                                  @Field("password") String password,
                                  @Field("token") String token);

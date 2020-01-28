@@ -5,7 +5,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.example.com.notification.LoginActivity;
 import android.example.com.notification.R;
 import android.os.Bundle;
 import android.view.View;

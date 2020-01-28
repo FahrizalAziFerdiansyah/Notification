@@ -1,4 +1,4 @@
-package android.example.com.notification;
+package android.example.com.notification.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.example.com.notification.Fragment.HomeFragment;
 import android.example.com.notification.Model.Siswa;
+import android.example.com.notification.R;
 import android.example.com.notification.RestApi.ApiInterface;
 import android.example.com.notification.RestApi.UtilsApi;
 import android.os.Bundle;
