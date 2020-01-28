@@ -6,12 +6,6 @@ import android.os.Parcelable;
 import com.google.gson.annotations.SerializedName;
 
 public class Info implements Parcelable {
-    @SerializedName("status")
-    String status;
-    @SerializedName("result")
-    String result;
-    @SerializedName("message")
-    String message;
     @SerializedName("id_info")
     String id_info;
     @SerializedName("judul")
@@ -22,17 +16,6 @@ public class Info implements Parcelable {
     String description;
     @SerializedName("gambar")
     String gambar;
-
-    public Info(String status, String result, String message, String id_info, String judul, String tgl_publish, String description, String gambar) {
-        this.status = status;
-        this.result = result;
-        this.message = message;
-        this.id_info = id_info;
-        this.judul = judul;
-        this.tgl_publish = tgl_publish;
-        this.description = description;
-        this.gambar = gambar;
-    }
 
     public String getId_info() {
         return id_info;
@@ -74,28 +57,12 @@ public class Info implements Parcelable {
         this.gambar = gambar;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getResult() {
-        return result;
-    }
-
-    public void setResult(String result) {
-        this.result = result;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
+    public Info(String id_info, String judul, String tgl_publish, String description, String gambar) {
+        this.id_info = id_info;
+        this.judul = judul;
+        this.tgl_publish = tgl_publish;
+        this.description = description;
+        this.gambar = gambar;
     }
 
     @Override
@@ -105,9 +72,6 @@ public class Info implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.status);
-        dest.writeString(this.result);
-        dest.writeString(this.message);
         dest.writeString(this.id_info);
         dest.writeString(this.judul);
         dest.writeString(this.tgl_publish);
@@ -115,13 +79,7 @@ public class Info implements Parcelable {
         dest.writeString(this.gambar);
     }
 
-    public Info() {
-    }
-
     protected Info(Parcel in) {
-        this.status = in.readString();
-        this.result = in.readString();
-        this.message = in.readString();
         this.id_info = in.readString();
         this.judul = in.readString();
         this.tgl_publish = in.readString();

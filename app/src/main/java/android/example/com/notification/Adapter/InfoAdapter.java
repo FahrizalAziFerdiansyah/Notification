@@ -16,18 +16,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
+import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.InfoViewHolder>{
-     Context context;
-    ArrayList<Info> infoArrayList;
+   final   Context mcontext;
+   private ArrayList<Info> infoList;
 
-    public InfoAdapter(ArrayList<Info> listinfo, Context context) {
-        this.context = context;
-        infoArrayList = listinfo;
+    public InfoAdapter(ArrayList<Info> info_list, Context context) {
+        this.mcontext = context;
+        infoList = info_list;
     }
+
 
 
     @NonNull
@@ -39,38 +42,38 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.InfoViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull InfoViewHolder holder, int position) {
-        Glide.with(context)
-                .load("http://192.168.1.14/sdbadean/vendor/assets/images/"+infoArrayList.get(position).getGambar())
-                .apply(new RequestOptions().transform(new RoundedCorners(50)))
-                .into(holder.gambar);
-        holder.judul.setText(infoArrayList.get(position).getJudul());
-        holder.tgl_publish.setText(infoArrayList.get(position).getTgl_publish());
-        holder.description.setText(infoArrayList.get(position).getDescription());
-        holder.card_info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Intent intent = new Intent(context, )
-            }
-        });
+//        Glide.with(mcontext)
+//                .load("http://192.168.43.103/sdbadean/index.php/vendor/assets/images/info/"+infoList.get(position).getGambar())
+//                .apply(new RequestOptions().transform(new RoundedCorners(50)))
+//                .into(holder.gambar_info);
+//        final String urlGambarBerita = "http://192.168.43.103/sdbadean/vendor/assets/images/info/" + infoList.get(position).getGambar();
+//        Picasso.with(mcontext).load(urlGambarBerita).into(holder.gambar_info);
+        holder.judul.setText(infoList.get(position).getJudul());
+
+        holder.tgl_publish.setText(infoList.get(position).getTgl_publish());
+        holder.description.setText(infoList.get(position).getDescription());
+
 
     }
 
     @Override
     public int getItemCount() {
-        return infoArrayList.size();
+        return (infoList ==  null) ? 0 : infoList.size();
     }
 
     public class InfoViewHolder extends RecyclerView.ViewHolder{
         public CardView card_info;
-        public ImageView gambar;
+        public ImageView gambar_info;
         public TextView judul, description, tgl_publish;
         public InfoViewHolder(@NonNull View itemView) {
             super(itemView);
             card_info = itemView.findViewById(R.id.card_info);
-            gambar = itemView.findViewById(R.id.image);
+            gambar_info = itemView.findViewById(R.id.gambar);
             judul = itemView.findViewById(R.id.judul);
             description = itemView.findViewById(R.id.description);
             tgl_publish = itemView.findViewById(R.id.tgl_publish);
+
+
         }
     }
 }

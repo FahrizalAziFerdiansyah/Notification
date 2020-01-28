@@ -16,12 +16,6 @@ public class GetInfo implements Parcelable {
     @SerializedName("message")
     String message;
 
-    public GetInfo(String status, ArrayList<Info> listDataInfo, String message) {
-        this.status = status;
-        this.listDataInfo = listDataInfo;
-        this.message = message;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -30,7 +24,7 @@ public class GetInfo implements Parcelable {
         this.status = status;
     }
 
-    public List<Info> getListDataInfo() {
+    public ArrayList<Info> getListDataInfo() {
         return listDataInfo;
     }
 
@@ -56,6 +50,9 @@ public class GetInfo implements Parcelable {
         dest.writeString(this.status);
         dest.writeTypedList(this.listDataInfo);
         dest.writeString(this.message);
+    }
+
+    public GetInfo() {
     }
 
     protected GetInfo(Parcel in) {

@@ -1,8 +1,10 @@
 package android.example.com.notification.Fragment;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.example.com.notification.Adapter.InfoAdapter;
+import android.example.com.notification.LoginActivity;
 import android.example.com.notification.Model.GetInfo;
 import android.example.com.notification.Model.Info;
 import android.example.com.notification.RestApi.ApiClient;
@@ -11,7 +13,6 @@ import android.example.com.notification.RestApi.UtilsApi;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -22,13 +23,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.example.com.notification.R;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,13 +40,13 @@ public class HomeFragment extends Fragment {
     TextView nama_siswa, nisn, menu1, menu2, menu3, menu4, menu;
     ImageView foto_siswa;
     RecyclerView rv_card;
-    ArrayList<Info> infoModelArrayList = new ArrayList<>();
+    ArrayList<Info> infoList = new ArrayList<>();
     InfoAdapter infoAdapter;
     Context mContext;
     ApiInterface mApiInterface;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-
+    SharedPreferences sharedPreferences;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -66,7 +65,13 @@ public class HomeFragment extends Fragment {
         menu4 = view.findViewById(R.id.menu4);
         menu = view.findViewById(R.id.mainMenu);
         rv_card = view.findViewById(R.id.rv_info);
-        mContext = getContext();
+        sharedPreferences = getActivity().getSharedPreferences("remember", Context.MODE_PRIVATE);
+        String nama = sharedPreferences.getString("nama_siswa", "1");
+        nama_siswa.setText(nama);
+        String nisn1 = sharedPreferences.getString("nisn", "2");
+        nisn.setText(nisn1);
+//
+//        mContext = getContext();
         mApiInterface = UtilsApi.getAPIService();
         rv_card.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
@@ -82,33 +87,29 @@ public class HomeFragment extends Fragment {
         // custom font
         nama_siswa.setTypeface(MMedium);
         nisn.setTypeface(MLight);
-
         menu.setTypeface(MReguler);
-
         menu1.setTypeface(MMedium);
         menu2.setTypeface(MMedium);
         menu3.setTypeface(MMedium);
         menu4.setTypeface(MMedium);
 
 
-
-
-
-
-        refresh();
+        ShowInfo();
         return view;
     }
-    public void refresh() {
-        Call<GetInfo> ListInfo = mApiInterface.getInfo();
-        ListInfo.enqueue(new Callback<GetInfo>() {
+//
+    public void ShowInfo() {
+        Call<GetInfo> ItemCall = mApiInterface.getInfo();
+        ItemCall.enqueue(new Callback<GetInfo>() {
             @Override
             public void onResponse(Call<GetInfo> call, Response<GetInfo>
                     response) {
-                List<Info> m = response.body().getListDataInfo();
-                Log.d("Retrofit Get", "Jumlah data Item: " +
-                        String.valueOf(m.size()));
-                mAdapter = new InfoAdapter(infoModelArrayList, getContext());
+                infoList = response.body().getListDataInfo();
+                Log.d("Retrofit Get", "Jumlah data Item: " + String.valueOf(infoList.size()));
+                mAdapter = new InfoAdapter(infoList, mContext);
                 rv_card.setAdapter(mAdapter);
+                runAnim(rv_card);
+
             }
 
             @Override
@@ -117,6 +118,7 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+
     private void runAnim(RecyclerView r) {
         Context context = r.getContext();
         LayoutAnimationController layoutAnimationController = AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_fall_down);

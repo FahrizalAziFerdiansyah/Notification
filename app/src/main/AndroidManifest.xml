@@ -13,12 +13,7 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".Activity.DaftarActivity"></activity>
-
-        <activity android:name=".Activity.HomeActivity"></activity>
-
-        <service
-            android:name=".Firebase.MyFirebaseMessagingService"
-            android:exported="false">
+        <service android:name=".Firebase.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
@@ -29,7 +24,7 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".Activity.LoginActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
