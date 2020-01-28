@@ -6,33 +6,26 @@ import android.os.Parcelable;
 import com.google.gson.annotations.SerializedName;
 
 public class Siswa  {
+    @SerializedName("stat")
+    String stat;
     @SerializedName("id_device")
     String id_device;
     @SerializedName("nisn")
     String nisn;
+    @SerializedName("alamat")
+    String alamat;
+    @SerializedName("kelas")
+    String kelas;
+    @SerializedName("nama_ayah")
+    String nama_ayah;
+    @SerializedName("nama_ibu")
+    String nama_ibu;
     @SerializedName("nomor_induk_sn")
     String nomor_induk_sn;
     @SerializedName("tempat_lahir_siswa")
     String tempat_lahir_siswa;
     @SerializedName("tanggal_lahir_siswa")
     String tanggal_lahir_siswa;
-
-    public String getTempat_lahir_siswa() {
-        return tempat_lahir_siswa;
-    }
-
-    public void setTempat_lahir_siswa(String tempat_lahir_siswa) {
-        this.tempat_lahir_siswa = tempat_lahir_siswa;
-    }
-
-    public String getTanggal_lahir_siswa() {
-        return tanggal_lahir_siswa;
-    }
-
-    public void setTanggal_lahir_siswa(String tanggal_lahir_siswa) {
-        this.tanggal_lahir_siswa = tanggal_lahir_siswa;
-    }
-
     @SerializedName("password")
     String password;
     @SerializedName("token")
@@ -53,6 +46,76 @@ public class Siswa  {
     String nama_rombel;
     @SerializedName("nama_gtk")
     String nama_gtk;
+    @SerializedName("ket")
+    String ket;
+
+
+    public String getKet() {
+        return ket;
+    }
+
+    public void setKet(String ket) {
+        this.ket = ket;
+    }
+
+    public String getTempat_lahir_siswa() {
+        return tempat_lahir_siswa;
+    }
+
+    public void setTempat_lahir_siswa(String tempat_lahir_siswa) {
+        this.tempat_lahir_siswa = tempat_lahir_siswa;
+    }
+
+    public String getKelas() {
+        return kelas;
+    }
+
+    public void setKelas(String kelas) {
+        this.kelas = kelas;
+    }
+
+    public String getAlamat() {
+        return alamat;
+    }
+
+
+    public String getNama_ayah() {
+        return nama_ayah;
+    }
+
+    public void setNama_ayah(String nama_ayah) {
+        this.nama_ayah = nama_ayah;
+    }
+
+    public String getNama_ibu() {
+        return nama_ibu;
+    }
+
+    public void setNama_ibu(String nama_ibu) {
+        this.nama_ibu = nama_ibu;
+    }
+
+    public String getStat() {
+        return stat;
+    }
+
+    public void setStat(String stat) {
+        this.stat = stat;
+    }
+
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
+    public String getTanggal_lahir_siswa() {
+        return tanggal_lahir_siswa;
+    }
+
+    public void setTanggal_lahir_siswa(String tanggal_lahir_siswa) {
+        this.tanggal_lahir_siswa = tanggal_lahir_siswa;
+    }
+
+
 
 
     public String getNomor_induk_sn() {

@@ -98,13 +98,13 @@ public class LoginActivity extends AppCompatActivity {
                         String nisn = response.body().getNisn();
                         String token = response.body().getToken();
                         String nama_siswa = response.body().getNama_siswa();
-                        String keterangan = response.body().getKeterangan();
-                        String tanggal_absensi = response.body().getTanggal_absensi();
-                        String waktu_mulai = response.body().getWaktu_mulai();
-                        String waktu_selesai = response.body().getWaktu_selesai();
-                        String nama_pelajaran = response.body().getNama_pelajaran();
-                        String nama_rombel = response.body().getNama_rombel();
-                        String nama_gtk = response.body().getNama_gtk();
+                      // String keterangan = response.body().getKeterangan();
+                       // String tanggal_absensi = response.body().getTanggal_absensi();
+                        //String waktu_mulai = response.body().getWaktu_mulai();
+                        //String waktu_selesai = response.body().getWaktu_selesai();
+                        //String nama_pelajaran = response.body().getNama_pelajaran();
+                        //String nama_rombel = response.body().getNama_rombel();
+                        //String nama_gtk = response.body().getNama_gtk();
 
                         Log.e("Berhasil Login", "Berhasil " +nisn+nama_siswa);
                         if(TextUtils.isEmpty(id_device)){
@@ -117,13 +117,13 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("nisn", nisn);
                             editor.putString("token", token);
                             editor.putString("nama_siswa", nama_siswa);
-                            editor.putString("keterangan", keterangan);
-                            editor.putString("tanggal_absensi", tanggal_absensi);
-                            editor.putString("waktu_mulai", waktu_mulai);
-                            editor.putString("waktu_selesai", waktu_selesai);
-                            editor.putString("nama_pelajaran", nama_pelajaran);
-                            editor.putString("nama_rombel", nama_rombel);
-                            editor.putString("nama_gtk", nama_gtk);
+                            //editor.putString("keterangan", keterangan);
+                            //editor.putString("tanggal_absensi", tanggal_absensi);
+                            //editor.putString("waktu_mulai", waktu_mulai);
+                            //editor.putString("waktu_selesai", waktu_selesai);
+                            //editor.putString("nama_pelajaran", nama_pelajaran);
+                            //editor.putString("nama_rombel", nama_rombel);
+                            //editor.putString("nama_gtk", nama_gtk);
                             editor.apply();
                             startActivity(intent);
                         }

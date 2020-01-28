@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.example.com.notification.Adapter.InfoAdapter;
-import android.example.com.notification.LoginActivity;
 import android.example.com.notification.Model.GetInfo;
 import android.example.com.notification.Model.Info;
 import android.example.com.notification.RestApi.ApiClient;
