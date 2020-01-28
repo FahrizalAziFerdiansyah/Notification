@@ -4,7 +4,7 @@ apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 28
     defaultConfig {
-        buildConfigField("String", "URL", '"http://192.168.1.14/sdbadean/index.php/api/"')
+        buildConfigField("String", "URL", '"http://192.168.137.55/sdbadean/index.php/api/"')
         applicationId "android.example.com.notification"
         minSdkVersion 16
         targetSdkVersion 28
