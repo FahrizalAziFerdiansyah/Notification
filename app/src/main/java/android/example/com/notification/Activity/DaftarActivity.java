@@ -23,6 +23,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,7 +33,7 @@ public class DaftarActivity extends AppCompatActivity implements View.OnClickLis
     String nis;
     Button daftar, cek, lihat,buat_akun;
     CardView data_siswa;
-    private View loadingView;
+    ProgressBar loadingView;
     EditText nisn, nama_ortu,password;
     TextView nis_n, nama, kelas, alamat, ttl;
     ApiInterface mApiInterface;
