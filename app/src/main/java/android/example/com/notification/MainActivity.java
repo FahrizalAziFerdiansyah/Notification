@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v == buttonDisplayToken) {
             String token = SharedPrefManager.getInstance(this).getDeviceToken();
+            //AJA
             Log.e("Token",token);
             Call<PostDevices> postDevicesCall=apiInterface.postDevice(nisn.getText().toString(),password.getText().toString(),token);
             postDevicesCall.enqueue(new Callback<PostDevices>() {
