@@ -98,6 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                         String nisn = response.body().getNisn();
                         String token = response.body().getToken();
                         String nama_siswa = response.body().getNama_siswa();
+                        String id_siswa = response.body().getId_siswa();
                       // String keterangan = response.body().getKeterangan();
                        // String tanggal_absensi = response.body().getTanggal_absensi();
                         //String waktu_mulai = response.body().getWaktu_mulai();
@@ -117,6 +118,7 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("nisn", nisn);
                             editor.putString("token", token);
                             editor.putString("nama_siswa", nama_siswa);
+                            editor.putString("id_siswa", id_siswa);
                             //editor.putString("keterangan", keterangan);
                             //editor.putString("tanggal_absensi", tanggal_absensi);
                             //editor.putString("waktu_mulai", waktu_mulai);

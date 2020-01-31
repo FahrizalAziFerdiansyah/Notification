@@ -13,8 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.DetailinfoActivity"></activity>
-        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.AbsensiActivity"></activity>
+        <activity android:name=".Activity.MapelActivity" />
+        <activity android:name=".Activity.DaftarActivity" />
         <activity android:name=".Activity.HomeActivity" />
 
         <service android:name=".Firebase.MyFirebaseMessagingService">
@@ -28,7 +29,7 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".Activity.DaftarActivity">
+        <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

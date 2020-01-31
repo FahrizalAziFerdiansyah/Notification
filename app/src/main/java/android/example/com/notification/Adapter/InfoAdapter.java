@@ -1,8 +1,6 @@
 package android.example.com.notification.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.example.com.notification.Activity.DetailinfoActivity;
 import android.example.com.notification.Model.Info;
 import android.example.com.notification.R;
 import android.view.LayoutInflater;
@@ -27,12 +25,13 @@ import java.util.List;
 public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.InfoViewHolder>{
    final   Context mcontext;
    private ArrayList<Info> infoList;
-    public static final String STATE_LIST = "state_list";
 
     public InfoAdapter(ArrayList<Info> info_list, Context context) {
         this.mcontext = context;
         infoList = info_list;
     }
+
+
 
     @NonNull
     @Override
@@ -42,24 +41,17 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.InfoViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull InfoViewHolder holder,final int position) {
-
-        final String urlGambarBerita = "http://192.168.43.103/sdbadean/vendor/assets/images/info/" + infoList.get(position).getGambar();
-        Picasso.with(mcontext).load(urlGambarBerita).into(holder.gambar_info);
+    public void onBindViewHolder(@NonNull InfoViewHolder holder, int position) {
+//        Glide.with(mcontext)
+//                .load("http://192.168.43.103/sdbadean/index.php/vendor/assets/images/info/"+infoList.get(position).getGambar())
+//                .apply(new RequestOptions().transform(new RoundedCorners(50)))
+//                .into(holder.gambar_info);
+//      final String urlGambarBerita = "http://192.168.1.2/sdbadean/vendor/assets/images/info/" + infoList.get(position).getGambar();
+//        Picasso.with(mcontext).load(urlGambarBerita).into(holder.gambar_info);
         holder.judul.setText(infoList.get(position).getJudul());
+
         holder.tgl_publish.setText(infoList.get(position).getTgl_publish());
         holder.description.setText(infoList.get(position).getDescription());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DetailinfoActivity.class);
-                intent.putExtra("judul", infoList.get(position).getJudul());
-                intent.putExtra("tgl_publish", infoList.get(position).getTgl_publish());
-                intent.putExtra("description", infoList.get(position).getDescription());
-                intent.putExtra("gambar", infoList.get(position).getGambar());
-                v.getContext().startActivity(intent);
-            }
-        });
 
 
     }
