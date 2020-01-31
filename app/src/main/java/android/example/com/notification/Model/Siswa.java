@@ -10,6 +10,8 @@ public class Siswa  {
     String stat;
     @SerializedName("id_device")
     String id_device;
+    @SerializedName("id_siswa")
+    String id_siswa;
     @SerializedName("nisn")
     String nisn;
     @SerializedName("alamat")
@@ -64,6 +66,14 @@ public class Siswa  {
 
     public void setTempat_lahir_siswa(String tempat_lahir_siswa) {
         this.tempat_lahir_siswa = tempat_lahir_siswa;
+    }
+
+    public String getId_siswa() {
+        return id_siswa;
+    }
+
+    public void setId_siswa(String id_siswa) {
+        this.id_siswa = id_siswa;
     }
 
     public String getKelas() {

@@ -1,8 +1,10 @@
 package android.example.com.notification.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.example.com.notification.Activity.MapelActivity;
 import android.example.com.notification.Adapter.InfoAdapter;
 import android.example.com.notification.Model.GetInfo;
 import android.example.com.notification.Model.Info;
@@ -37,7 +39,7 @@ import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
     TextView nama_siswa, nisn, menu1, menu2, menu3, menu4, menu;
-    ImageView foto_siswa;
+    ImageView foto_siswa,absen;
     RecyclerView rv_card;
     ArrayList<Info> infoList = new ArrayList<>();
     InfoAdapter infoAdapter;
@@ -70,6 +72,14 @@ public class HomeFragment extends Fragment {
         String nisn1 = sharedPreferences.getString("nisn", "2");
         nisn.setText(nisn1);
 //
+        absen=view.findViewById(R.id.absen);
+        absen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getContext(), MapelActivity.class);
+                startActivity(intent);
+            }
+        });
 //        mContext = getContext();
         mApiInterface = UtilsApi.getAPIService();
         rv_card.setHasFixedSize(true);
