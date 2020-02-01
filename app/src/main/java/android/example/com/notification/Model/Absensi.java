@@ -19,6 +19,26 @@ public class Absensi {
     String nama_rombel;
     @SerializedName("tanggal")
     String tanggal;
+    @SerializedName("id_siswa")
+    String id_siswa;
+    @SerializedName("status")
+    String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getId_siswa() {
+        return id_siswa;
+    }
+
+    public void setId_siswa(String id_siswa) {
+        this.id_siswa = id_siswa;
+    }
 
     public String getNama_rombel() {
         return nama_rombel;
