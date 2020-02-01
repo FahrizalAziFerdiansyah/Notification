@@ -49,6 +49,7 @@
                     android:id="@+id/et_nisn"
                     style="@style/modifiedEditText"
                     android:hint="@string/login_nisn_hint"
+                    android:textSize="14sp"
                     android:maxLines="1"
                     android:inputType="textPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -61,6 +62,7 @@
                     android:id="@+id/et_password"
                     style="@style/modifiedEditText"
                     android:hint="@string/login_password_hint"
+                    android:textSize="14sp"
                     android:maxLines="1"
                     android:inputType="textPassword"/>
             </com.google.android.material.textfield.TextInputLayout>

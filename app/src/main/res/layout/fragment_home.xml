@@ -8,8 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F9F8FF"
-        tools:context=".DashbordActivity">
+        android:background="#F9F8FF">
 
         <View
             android:id="@+id/view3"
