@@ -14,6 +14,7 @@
         android:layout_alignParentLeft="true"
         android:layout_centerInParent="true"
         android:paddingTop="20dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,7 +39,7 @@
                     style="@style/viewParent.headerText.NoMode"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:text="SDN \nBadean 01 \nBondowoso" />
+                    android:text="Login \nWali \nMurid" />
             </RelativeLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -49,9 +50,7 @@
                     android:id="@+id/et_nisn"
                     style="@style/modifiedEditText"
                     android:hint="@string/login_nisn_hint"
-                    android:textSize="14sp"
-                    android:maxLines="1"
-                    android:inputType="textPassword"/>
+                    android:maxLines="1"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -62,7 +61,6 @@
                     android:id="@+id/et_password"
                     style="@style/modifiedEditText"
                     android:hint="@string/login_password_hint"
-                    android:textSize="14sp"
                     android:maxLines="1"
                     android:inputType="textPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
