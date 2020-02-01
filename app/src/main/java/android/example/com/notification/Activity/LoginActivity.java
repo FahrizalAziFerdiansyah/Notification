@@ -35,13 +35,19 @@ public class LoginActivity extends AppCompatActivity {
     private ImageView logo;
     private Animation smalltobig, btta, btta2;
     ProgressDialog progressDialog;
+    SharedPreferences mSettings;
     ApiInterface mApiInterface;
+    SharedPreferences.Editor editor;
     SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
         //i
+        mSettings = this.getSharedPreferences("Settings", Context.MODE_PRIVATE);
+        editor =  mSettings.edit();
+
+
         smalltobig = AnimationUtils.loadAnimation(this, R.anim.smalltobig);
         btta = AnimationUtils.loadAnimation(this, R.anim.btta);
         btta2 = AnimationUtils.loadAnimation(this, R.anim.btta2);
@@ -112,11 +118,8 @@ public class LoginActivity extends AppCompatActivity {
                         } else{
                             Toast.makeText(LoginActivity.this,"Berhasil Login", Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                            SharedPreferences.Editor editor =sharedPreferences.edit();
                             editor.putString("id_device", id_device);
-                            editor.putString("nisn", nisn);
                             editor.putString("token", token);
-                            editor.putString("nama_siswa", nama_siswa);
                             //editor.putString("keterangan", keterangan);
                             //editor.putString("tanggal_absensi", tanggal_absensi);
                             //editor.putString("waktu_mulai", waktu_mulai);
@@ -124,6 +127,9 @@ public class LoginActivity extends AppCompatActivity {
                             //editor.putString("nama_pelajaran", nama_pelajaran);
                             //editor.putString("nama_rombel", nama_rombel);
                             //editor.putString("nama_gtk", nama_gtk);
+                            editor.putString("nama_siswa", nama_siswa);
+                            editor.putString("nisn", nisn);
+                            editor.putBoolean("ceklogin", true);
                             editor.apply();
                             startActivity(intent);
                         }

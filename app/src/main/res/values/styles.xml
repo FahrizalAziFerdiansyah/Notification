@@ -36,6 +36,10 @@
         <item name="android:textColor">@color/darkTextColor</item>
     </style>
 
+    <style name="viewParent.headerText.White">
+        <item name="android:textColor">@color/whiteTextColor</item>
+    </style>
+
     <style name="parent">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
