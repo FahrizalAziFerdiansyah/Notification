@@ -3,6 +3,7 @@ package android.example.com.notification.Activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.animation.ValueAnimator;
 import android.example.com.notification.CurvedBottomNavigationView;
@@ -40,6 +41,10 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         lin_id = findViewById(R.id.lin_id);
         bottomNavigationView.inflateMenu(R.menu.main_menu);
 
+        HomeFragment homeFragment = new HomeFragment();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.container_layout, homeFragment);
+        fragmentTransaction.commit();
         //set event
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
@@ -52,25 +57,11 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 
         switch (menuItem.getItemId())
         {
-            case R.id.home:
-//            Toast.makeText(this,"Click home", Toast.LENGTH_SHORT).show();
-                //anim
-                draw(6);
-                //find
-                lin_id.setX(bottomNavigationView.mFirstCurveControlPoint1.x);
-                fab.setVisibility(View.VISIBLE);
-                fab1.setVisibility(View.GONE);
-                fab2.setVisibility(View.GONE);
-                drawAnimation(fab);
-                fragment = new HomeFragment();
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container_layout, fragment, fragment.getClass().getSimpleName())
-                        .commit();
-                break;
+
             case R.id.notif:
 //                Toast.makeText(this,"Click notif", Toast.LENGTH_SHORT).show();
                 //anim
-                draw(2);
+                draw(6);
                 //find
                 lin_id.setX(bottomNavigationView.mFirstCurveControlPoint1.x);
                 fab.setVisibility(View.GONE);
@@ -78,6 +69,21 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                 fab2.setVisibility(View.GONE);
                 drawAnimation(fab1);
                 fragment = new NotifFragment();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container_layout, fragment, fragment.getClass().getSimpleName())
+                        .commit();
+                break;
+            case R.id.home:
+//            Toast.makeText(this,"Click home", Toast.LENGTH_SHORT).show();
+                //anim
+                draw(2);
+                //find
+                lin_id.setX(bottomNavigationView.mFirstCurveControlPoint1.x);
+                fab.setVisibility(View.VISIBLE);
+                fab1.setVisibility(View.GONE);
+                fab2.setVisibility(View.GONE);
+                drawAnimation(fab);
+                fragment = new HomeFragment();
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container_layout, fragment, fragment.getClass().getSimpleName())
                         .commit();
