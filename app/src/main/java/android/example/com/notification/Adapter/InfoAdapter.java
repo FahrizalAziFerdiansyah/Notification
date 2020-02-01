@@ -1,6 +1,8 @@
 package android.example.com.notification.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.example.com.notification.Activity.DetailinfoActivity;
 import android.example.com.notification.Model.Info;
 import android.example.com.notification.R;
 import android.view.LayoutInflater;
@@ -35,24 +37,33 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.InfoViewHolder
 
     @NonNull
     @Override
-    public InfoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public InfoViewHolder onCreateViewHolder(@NonNull ViewGroup parent,final int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item,parent,false);
         return new InfoViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull InfoViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull InfoViewHolder holder,final int position) {
 //        Glide.with(mcontext)
 //                .load("http://192.168.43.103/sdbadean/index.php/vendor/assets/images/info/"+infoList.get(position).getGambar())
 //                .apply(new RequestOptions().transform(new RoundedCorners(50)))
 //                .into(holder.gambar_info);
-//      final String urlGambarBerita = "http://192.168.1.2/sdbadean/vendor/assets/images/info/" + infoList.get(position).getGambar();
-//        Picasso.with(mcontext).load(urlGambarBerita).into(holder.gambar_info);
+      final String urlGambarBerita = "http://192.168.43.103/sdbadean/vendor/assets/images/info/" + infoList.get(position).getGambar();
+        Picasso.with(mcontext).load(urlGambarBerita).into(holder.gambar_info);
         holder.judul.setText(infoList.get(position).getJudul());
-
         holder.tgl_publish.setText(infoList.get(position).getTgl_publish());
         holder.description.setText(infoList.get(position).getDescription());
-
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent mIntent = new Intent(v.getContext(), DetailinfoActivity.class);
+//                mIntent.putExtra("judul", infoList.get(position).getJudul());
+//                mIntent.putExtra("tgl_publish", infoList.get(position).getTgl_publish());
+//                mIntent.putExtra("description", infoList.get(position).getDescription());
+//                mIntent.putExtra("gambar", infoList.get(position).getGambar());
+//                v.getContext().startActivity(mIntent);
+//            }
+//        });
 
     }
 

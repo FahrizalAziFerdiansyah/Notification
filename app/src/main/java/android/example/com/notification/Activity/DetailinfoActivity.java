@@ -39,7 +39,7 @@ public class DetailinfoActivity extends AppCompatActivity {
         description = findViewById(R.id.description_detail);
         img_Full = findViewById(R.id.gambar_detail);
 
-
+//
         Intent m = getIntent();
         judul.setText(m.getStringExtra("judul"));
         tgl_publish.setText(m.getStringExtra("tgl_publish"));
