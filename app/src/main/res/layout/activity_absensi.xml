@@ -18,9 +18,11 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             tools:ignore="MissingConstraints">
+
             <include
                 android:id="@+id/toolbar1"
                 layout="@layout/bar_layout" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -58,23 +60,54 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
+                <TextView
+                    android:id="@+id/txt_pilih"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tanggal"
+                    android:layout_marginTop="10dp"
+                    android:text="Pilih Bulan :"
+                    android:textColor="#262626"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/sp_bulan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_pilih"
+                    android:layout_marginBottom="20dp"
+                    android:entries="@array/bulan"
+                    android:padding="10dp"></Spinner>
+
                 <Button
                     android:id="@+id/lain"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/rombel"
-                    android:layout_alignParentRight="true"
-                    android:text="Bulan Lain"
+                    android:layout_below="@id/txt_pilih"
+                    android:layout_toRightOf="@id/sp_bulan"
+                    android:text="Pilih"
                     android:textAllCaps="false" />
 
-                <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                <androidx.cardview.widget.CardView
+
+                    xmlns:android="http://schemas.android.com/apk/res/android"
                     xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/card_info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
+                    android:layout_below="@id/sp_bulan"
                     android:layout_margin="5dp"
                     app:cardCornerRadius="20dp">
+
+                    <ProgressBar
+                        android:id="@+id/loading_spinner"
+                        style="?android:attr/progressBarStyleLarge"
+                        android:layout_width="65dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@android:color/white"
+                        android:visibility="visible" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -217,6 +250,45 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_alignParentBottom="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="30dp"
+                            android:src="@drawable/ic_book" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:visibility="gone"
+                    android:layout_below="@id/sp_bulan"
+                    app:cardCornerRadius="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:gravity="center|left">
+
+                        <TextView
+                            android:id="@+id/kosong"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="16dp"
+                            android:gravity="center"
+                            android:text="Belum Ada Absensi"
+                            android:textColor="#262626"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_below="@id/kosong"
                             android:layout_centerInParent="true"
                             android:layout_marginRight="16dp"
                             android:layout_marginBottom="30dp"

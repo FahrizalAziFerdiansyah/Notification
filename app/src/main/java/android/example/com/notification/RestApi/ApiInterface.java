@@ -43,4 +43,10 @@ public interface ApiInterface {
                              @Field("id_pelajaran") String id_pelajaran,
                              @Field("bulan") String bulan);
 
+    @FormUrlEncoded
+    @POST("Absen/bulan")
+    Call<Absensi> cekAbsensi(@Field("id_siswa")String id_siswa,
+                             @Field("id_pelajaran") String id_pelajaran,
+                             @Field("bulan") String bulan);
+
 }
