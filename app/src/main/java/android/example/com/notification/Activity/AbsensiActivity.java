@@ -68,7 +68,7 @@ public class AbsensiActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AbsensiActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                startActivity(new Intent(AbsensiActivity.this, MapelActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
             }
         });
         tanggal = findViewById(R.id.tanggal);
@@ -96,6 +96,8 @@ public class AbsensiActivity extends AppCompatActivity {
         card_info=findViewById(R.id.card_info);
         sp_bulan=findViewById(R.id.sp_bulan);
         loadingView = findViewById(R.id.loading_spinner);
+
+        rombel.setText("Kelas : " + sharedPreferences.getString("nama_rombel", "1"));
 
         Calendar c1 = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
@@ -188,7 +190,6 @@ public class AbsensiActivity extends AppCompatActivity {
 
 
                 if (TextUtils.isEmpty(tgl)){
-                    rombel.setText("Belum ada absensi");
                     tanggal.setText("");
                     card_empty.setVisibility(View.VISIBLE);
                     card_info.setVisibility(View.GONE);
@@ -197,7 +198,6 @@ public class AbsensiActivity extends AppCompatActivity {
                     card_info.setVisibility(View.VISIBLE);
                     String[] data_waktu = tgl.split(" ");
                     String tlg = data_waktu[1];
-                    rombel.setText("Kelas : " + nama_rombel);
                     tanggal.setText("Tanggal : " + tlg + " - " + date);
                 }
 

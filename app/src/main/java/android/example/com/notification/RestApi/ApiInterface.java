@@ -3,8 +3,10 @@ package android.example.com.notification.RestApi;
 import android.example.com.notification.Model.Absensi;
 import android.example.com.notification.Model.GetAbsensi;
 import android.example.com.notification.Model.GetInfo;
+import android.example.com.notification.Model.GetNotifikasi;
 import android.example.com.notification.Model.GetPelajaran;
 import android.example.com.notification.Model.GetSiswa;
+import android.example.com.notification.Model.Notifikasi;
 import android.example.com.notification.Model.PostDevices;
 import android.example.com.notification.Model.Siswa;
 
@@ -44,9 +46,7 @@ public interface ApiInterface {
                              @Field("bulan") String bulan);
 
     @FormUrlEncoded
-    @POST("Absen/bulan")
-    Call<Absensi> cekAbsensi(@Field("id_siswa")String id_siswa,
-                             @Field("id_pelajaran") String id_pelajaran,
-                             @Field("bulan") String bulan);
+    @POST("Absen/notif")
+    Call<GetNotifikasi> postNotifikasi(@Field("id_siswa")String id_siswa);
 
 }
