@@ -53,17 +53,18 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.InfoViewHolder
         holder.judul.setText(infoList.get(position).getJudul());
         holder.tgl_publish.setText(infoList.get(position).getTgl_publish());
         holder.description.setText(infoList.get(position).getDescription());
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent mIntent = new Intent(v.getContext(), DetailinfoActivity.class);
-//                mIntent.putExtra("judul", infoList.get(position).getJudul());
-//                mIntent.putExtra("tgl_publish", infoList.get(position).getTgl_publish());
-//                mIntent.putExtra("description", infoList.get(position).getDescription());
-//                mIntent.putExtra("gambar", infoList.get(position).getGambar());
-//                v.getContext().startActivity(mIntent);
-//            }
-//        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent m = new Intent(v.getContext(), DetailinfoActivity.class);
+                m.putExtra("judul", infoList.get(position).getJudul());
+                m.putExtra("tgl_publish", infoList.get(position).getTgl_publish());
+                m.putExtra("description", infoList.get(position).getDescription());
+                m.putExtra("gambar", infoList.get(position).getGambar());
+                v.getContext().startActivity(m);
+
+            }
+        });
 
     }
 
