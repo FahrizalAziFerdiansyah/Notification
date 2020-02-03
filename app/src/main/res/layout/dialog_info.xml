@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="16dp">
+
+        <RelativeLayout
+            android:id="@+id/r1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/re2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_pr"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/homework" />
+
+                <TextView
+                    android:id="@+id/txt_pr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/img_pr"
+                    android:gravity="center"
+                    android:text="Pekerjaan Rumah"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/re1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_ulangan"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/checklist" />
+
+                <TextView
+                    android:id="@+id/txt_ulangan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/img_ulangan"
+                    android:text="Ulangan"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/r1"
+            android:layout_marginTop="10dp"
+            android:background="#f0f0f0" />
+
+        <RelativeLayout
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view">
+
+            <TextView
+                android:id="@+id/mapel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mapel" />
+
+            <TextView
+                android:id="@+id/deadline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mapel"
+                android:text="Deadline" />
+
+            <TextView
+                android:id="@+id/keterangan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/deadline"
+                android:text="Keterangan" />
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/keterangan"
+                android:layout_marginTop="10dp"
+                android:background="#f0f0f0" />
+            <Button
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="5dp"
+                android:id="@+id/ok"
+                android:backgroundTint="@color/colorToolbar"
+                android:layout_below="@id/view2"
+                android:layout_alignParentRight="true"
+                android:textAllCaps="false"
+                android:text="Ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -50,6 +50,8 @@ public class Siswa  {
     String nama_gtk;
     @SerializedName("ket")
     String ket;
+    @SerializedName("id_rombel")
+    String id_rombel;
 
 
     public String getKet() {
@@ -230,5 +232,13 @@ public class Siswa  {
 
     public void setNama_gtk(String nama_gtk) {
         this.nama_gtk = nama_gtk;
+    }
+
+    public String getId_rombel() {
+        return id_rombel;
+    }
+
+    public void setId_rombel(String id_rombel) {
+        this.id_rombel = id_rombel;
     }
 }

@@ -1,8 +1,11 @@
 package android.example.com.notification.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.example.com.notification.Activity.AbsensiActivity;
+import android.example.com.notification.Activity.DetailNotifActivity;
+import android.example.com.notification.Activity.HomeActivity;
 import android.example.com.notification.Activity.MapelActivity;
 import android.example.com.notification.Adapter.NotifikasiAdapter;
 import android.example.com.notification.Adapter.PelajaranAdapter;
@@ -15,6 +18,7 @@ import android.example.com.notification.RestApi.UtilsApi;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -54,6 +58,7 @@ public class NotifFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_notif, container, false);
+
         sharedPreferences = getContext().getSharedPreferences("remember", Context.MODE_PRIVATE);
         id_siswa = sharedPreferences.getString("id_siswa", "1");
 

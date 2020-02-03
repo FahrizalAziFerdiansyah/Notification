@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     private ImageView logo;
     private Animation smalltobig, btta, btta2;
     ProgressDialog progressDialog;
-    SharedPreferences mSettings;
+  //  SharedPreferences mSettings;
     ApiInterface mApiInterface;
     SharedPreferences.Editor editor;
     SharedPreferences sharedPreferences;
@@ -44,8 +44,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
         //i
-        mSettings = this.getSharedPreferences("Settings", Context.MODE_PRIVATE);
-        editor =  mSettings.edit();
+       //mSettings = this.getSharedPreferences("Settings", Context.MODE_PRIVATE);
+
 
 
         smalltobig = AnimationUtils.loadAnimation(this, R.anim.smalltobig);
@@ -77,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
 //        //i
         mApiInterface = UtilsApi.getAPIService();
         sharedPreferences = LoginActivity.this.getSharedPreferences("remember", Context.MODE_PRIVATE);
+        editor =  sharedPreferences.edit();
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,8 +111,9 @@ public class LoginActivity extends AppCompatActivity {
                         //String waktu_selesai = response.body().getWaktu_selesai();
                         //String nama_pelajaran = response.body().getNama_pelajaran();
                         String nama_rombel = response.body().getNama_rombel();
+                        String id_rombel = response.body().getId_rombel();
                         //String nama_gtk = response.body().getNama_gtk();
-
+                        Log.e("id_rombel", id_rombel);
                         Log.e("Berhasil Login", "Berhasil " +nisn+nama_siswa);
                         if(TextUtils.isEmpty(id_device)){
                             Toast.makeText(LoginActivity.this,"NISN atau Password salah", Toast.LENGTH_LONG).show();
@@ -125,8 +127,8 @@ public class LoginActivity extends AppCompatActivity {
                             //editor.putString("waktu_mulai", waktu_mulai);
                             //editor.putString("waktu_selesai", waktu_selesai);
                             //editor.putString("nama_pelajaran", nama_pelajaran);
-                             editor.putString("nama_rombel", nama_rombel);
-                            //editor.putString("nama_gtk", nama_gtk);
+                            editor.putString("nama_rombel", nama_rombel);
+                            editor.putString("id_rombel", id_rombel);
                             editor.putString("nama_siswa", nama_siswa);
                             editor.putString("nisn", nisn);
                             editor.putBoolean("ceklogin", true);

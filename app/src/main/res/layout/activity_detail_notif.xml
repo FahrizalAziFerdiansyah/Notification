@@ -101,12 +101,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/nisn"
-                        android:layout_marginTop="5dp"
                         android:text="Nama"
                         android:textSize="15sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:layout_marginTop="5dp"
                         android:id="@+id/txt_nama"
                         android:paddingLeft="10dp"
                         android:text="Nama"
@@ -121,12 +119,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/nama"
-                        android:layout_marginTop="5dp"
                         android:text="Kelas"
                         android:textSize="15sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:layout_marginTop="5dp"
                         android:id="@+id/txt_kelas"
                         android:paddingLeft="10dp"
                         android:text="Kelas"
@@ -141,12 +137,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/kelas"
-                        android:layout_marginTop="5dp"
                         android:text="Kategori"
                         android:textSize="15sp"
                         android:textStyle="bold" />
                     <TextView
-                        android:layout_marginTop="5dp"
                         android:id="@+id/txt_kategori"
                         android:paddingLeft="10dp"
                         android:text="Kategori"
@@ -160,13 +154,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/kategori"
-                        android:layout_marginTop="5dp"
                         android:text="Guru"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:layout_marginTop="5dp"
                         android:id="@+id/txt_gtk"
                         android:paddingLeft="10dp"
                         android:text="Guru"
