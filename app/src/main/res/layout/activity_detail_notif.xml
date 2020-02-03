@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.DetailNotifActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <include
+            android:id="@+id/toolbar1"
+            layout="@layout/bar_layout" />
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="16dp"
+            android:gravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_notifikasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="16dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card"
+                        android:layout_width="175px"
+                        android:layout_height="175px"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:backgroundTint="@color/colorToolbar"
+                        app:cardCornerRadius="45dp">
+
+                        <TextView
+                            android:id="@+id/kehadiran"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="H"
+                            android:textColor="@android:color/white"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/txt_kehadiran"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/card"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:text="Kehadiran" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/txt_kehadiran"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0" />
+
+                    <TextView
+                        android:id="@+id/nisn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view"
+                        android:layout_marginTop="10dp"
+                        android:text="NISN"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/txt_nisn"
+                        android:paddingLeft="10dp"
+                        android:text="NISN"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/view"
+                        android:layout_toRightOf="@id/nisn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/nama"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nisn"
+                        android:layout_marginTop="5dp"
+                        android:text="Nama"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/txt_nama"
+                        android:paddingLeft="10dp"
+                        android:text="Nama"
+                        android:layout_below="@+id/nisn"
+                        android:layout_toRightOf="@id/nama"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                    <TextView
+                        android:id="@+id/kelas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nama"
+                        android:layout_marginTop="5dp"
+                        android:text="Kelas"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/txt_kelas"
+                        android:paddingLeft="10dp"
+                        android:text="Kelas"
+                        android:layout_below="@+id/nama"
+                        android:layout_toRightOf="@id/kelas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                    <TextView
+                        android:id="@+id/kategori"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/kelas"
+                        android:layout_marginTop="5dp"
+                        android:text="Kategori"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/txt_kategori"
+                        android:paddingLeft="10dp"
+                        android:text="Kategori"
+                        android:layout_below="@+id/kelas"
+                        android:layout_toRightOf="@id/kategori"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/gtk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/kategori"
+                        android:layout_marginTop="5dp"
+                        android:text="Guru"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/txt_gtk"
+                        android:paddingLeft="10dp"
+                        android:text="Guru"
+                        android:layout_below="@+id/kategori"
+                        android:layout_toRightOf="@id/gtk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <RelativeLayout
+                        android:id="@+id/wa"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/gtk">
+
+                        <View
+                            android:layout_marginBottom="15dp"
+                            android:id="@+id/v2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="5dp"
+                            android:background="#f0f0f0" />
+
+                        <TextView
+                            android:paddingLeft="10dp"
+                            android:layout_toRightOf="@id/btnOpenWhatsapp"
+                            android:textStyle="italic"
+                            android:layout_centerVertical="true"
+                            android:text="Hubungi guru jika kehadiran tidak sesuai."
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <ImageView
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:layout_centerVertical="true"
+                            android:id="@+id/btnOpenWhatsapp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_below="@id/v2"
+                            android:layout_marginTop="5dp"
+                            android:src="@drawable/whatsapp"
+                            android:text="Buka Whatsapp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
