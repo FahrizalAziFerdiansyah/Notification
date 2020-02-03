@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.DetailNotifActivity"></activity>
+        <activity android:name=".Activity.InfoRombelActivity"></activity>
+        <activity android:name=".Activity.DetailNotifActivity" />
         <activity android:name=".Activity.DaftarActivity" />
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.HomeActivity" />

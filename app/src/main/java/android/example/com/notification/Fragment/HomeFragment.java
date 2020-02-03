@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.example.com.notification.Activity.InfoRombelActivity;
 import android.example.com.notification.Activity.MapelActivity;
 import android.example.com.notification.Adapter.InfoAdapter;
 import android.example.com.notification.Model.GetInfo;
@@ -39,7 +40,7 @@ import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
     TextView nama_siswa, nisn, menu1, menu2, menu3, menu4, menu;
-    ImageView foto_siswa,absen;
+    ImageView foto_siswa,absen,icplug;
     RecyclerView rv_card;
     ArrayList<Info> infoList = new ArrayList<>();
     InfoAdapter infoAdapter;
@@ -68,6 +69,8 @@ public class HomeFragment extends Fragment {
         rv_card = view.findViewById(R.id.rv_info);
         sharedPreferences = getActivity().getSharedPreferences("remember", Context.MODE_PRIVATE);
         String nama = sharedPreferences.getString("nama_siswa", "1");
+        String id_rombel2 = sharedPreferences.getString("id_rombel", "2");
+        Log.e("id",id_rombel2);
         nama_siswa.setText(nama);
         String nisn1 = sharedPreferences.getString("nisn", "2");
         nisn.setText(nisn1);
@@ -77,6 +80,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(getContext(), MapelActivity.class);
+                startActivity(intent);
+            }
+        });
+        icplug=view.findViewById(R.id.tugas);
+        icplug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getContext(), InfoRombelActivity.class);
                 startActivity(intent);
             }
         });
