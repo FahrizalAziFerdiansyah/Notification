@@ -52,7 +52,16 @@ public class Siswa  {
     String ket;
     @SerializedName("id_rombel")
     String id_rombel;
+    @SerializedName("jenis_kelamin_siswa")
+    String jenis_kelamin_siswa;
 
+    public String getJenis_kelamin_siswa() {
+        return jenis_kelamin_siswa;
+    }
+
+    public void setJenis_kelamin_siswa(String jenis_kelamin_siswa) {
+        this.jenis_kelamin_siswa = jenis_kelamin_siswa;
+    }
 
     public String getKet() {
         return ket;
@@ -232,13 +241,5 @@ public class Siswa  {
 
     public void setNama_gtk(String nama_gtk) {
         this.nama_gtk = nama_gtk;
-    }
-
-    public String getId_rombel() {
-        return id_rombel;
-    }
-
-    public void setId_rombel(String id_rombel) {
-        this.id_rombel = id_rombel;
     }
 }
