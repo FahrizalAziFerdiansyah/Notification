@@ -26,7 +26,7 @@ public class ScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screen);
 
-        mSettings = this.getSharedPreferences("Settings", Context.MODE_PRIVATE);
+        mSettings = this.getSharedPreferences("remember", Context.MODE_PRIVATE);
         ceklogin = mSettings.getBoolean("ceklogin", false);
         Log.e("RAG", "onCreate: " + ceklogin );
 
