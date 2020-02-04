@@ -19,7 +19,7 @@ public class DetailinfoActivity extends AppCompatActivity {
     ApiInterface mApiInterface;
     private ProgressBar progressBar;
     TextView judul, tgl_publish, description;
-     ImageView img_Full;
+    ImageView img_Full;
     private String img_info, s_title, s_tglPublish, s_description;
     private int runTime;
 
