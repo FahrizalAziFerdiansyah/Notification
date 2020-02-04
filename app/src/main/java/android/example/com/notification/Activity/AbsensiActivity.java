@@ -45,7 +45,7 @@ public class AbsensiActivity extends AppCompatActivity {
     TextView tanggal, mapel, nama, rombel, bln, h, i, s, a;
     String month;
     SharedPreferences sharedPreferences;
-    String id_siswa, id_pelajaran, nama_pelajaran, nama_siswa;
+    String id_siswa, id_pelajaran, nama_pelajaran, nama_siswa,id_rombel;
     String tgl;
     String date;
     Button lain;
@@ -82,6 +82,7 @@ public class AbsensiActivity extends AppCompatActivity {
         sharedPreferences = AbsensiActivity.this.getSharedPreferences("remember", Context.MODE_PRIVATE);
         id_siswa = sharedPreferences.getString("id_siswa", "1");
         nama_siswa = sharedPreferences.getString("nama_siswa", "1");
+        id_rombel = sharedPreferences.getString("id_rombel", "1");
 
         Intent mIntent = getIntent();
         id_pelajaran = mIntent.getStringExtra("id_pelajaran");
@@ -172,9 +173,9 @@ public class AbsensiActivity extends AppCompatActivity {
 
     }
     public void refresh() {
-        Log.e("id_s", id_siswa);
-        Log.e("id_k", id_pelajaran);
-        Call<Absensi> getAbsensiCall = mApiInterface.getAbsensi(id_siswa, id_pelajaran, month);
+  //      Log.e("id_s", id_siswa);
+//        Log.e("id_k", id_pelajaran);
+        Call<Absensi> getAbsensiCall = mApiInterface.getAbsensi(id_siswa, id_rombel, month);
         getAbsensiCall.enqueue(new Callback<Absensi>() {
             @Override
             public void onResponse(Call<Absensi> call, Response<Absensi> response) {

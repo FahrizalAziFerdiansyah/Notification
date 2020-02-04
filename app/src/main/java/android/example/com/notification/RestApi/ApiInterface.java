@@ -43,7 +43,7 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("Absen/absensi")
     Call<Absensi> getAbsensi(@Field("id_siswa")String id_siswa,
-                             @Field("id_pelajaran") String id_pelajaran,
+                             @Field("id_rombel") String id_rombel,
                              @Field("bulan") String bulan);
 
     @FormUrlEncoded

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.example.com.notification.Activity.AbsensiActivity;
 import android.example.com.notification.Activity.InfoRombelActivity;
 import android.example.com.notification.Activity.MapelActivity;
 import android.example.com.notification.Adapter.InfoAdapter;
@@ -79,7 +80,7 @@ public class HomeFragment extends Fragment {
         absen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(getContext(), MapelActivity.class);
+                Intent intent= new Intent(getContext(), AbsensiActivity.class);
                 startActivity(intent);
             }
         });

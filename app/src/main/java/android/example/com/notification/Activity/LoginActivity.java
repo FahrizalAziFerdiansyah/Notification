@@ -113,8 +113,8 @@ public class LoginActivity extends AppCompatActivity {
                         String nama_rombel = response.body().getNama_rombel();
                         String id_rombel = response.body().getId_rombel();
                         //String nama_gtk = response.body().getNama_gtk();
-                        Log.e("id_rombel", id_rombel);
-                        Log.e("Berhasil Login", "Berhasil " +nisn+nama_siswa);
+                       // Log.e("id_rombel", id_rombel);
+                        //Log.e("Berhasil Login", "Berhasil " +nisn+nama_siswa);
                         if(TextUtils.isEmpty(id_device)){
                             Toast.makeText(LoginActivity.this,"NISN atau Password salah", Toast.LENGTH_LONG).show();
                         } else{
