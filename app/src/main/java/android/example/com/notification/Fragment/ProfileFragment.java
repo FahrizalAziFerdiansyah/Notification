@@ -56,7 +56,7 @@ public class ProfileFragment extends Fragment {
         nisn.setText(nisn1);
         String rombel1 = sharedPreferences.getString("nama_rombel", "3");
         rombel.setText(rombel1);
-        String jk1 = sharedPreferences.getString("jk", "4");
+        String jk1 = sharedPreferences.getString("jenis_kelamin_siswa", "4");
         jk.setText(jk1);
 
         btnlogout.setOnClickListener(new View.OnClickListener() {
