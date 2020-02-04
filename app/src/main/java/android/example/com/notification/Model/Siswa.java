@@ -55,6 +55,14 @@ public class Siswa  {
     @SerializedName("jenis_kelamin_siswa")
     String jenis_kelamin_siswa;
 
+    public String getId_rombel() {
+        return id_rombel;
+    }
+
+    public void setId_rombel(String id_rombel) {
+        this.id_rombel = id_rombel;
+    }
+
     public String getJenis_kelamin_siswa() {
         return jenis_kelamin_siswa;
     }

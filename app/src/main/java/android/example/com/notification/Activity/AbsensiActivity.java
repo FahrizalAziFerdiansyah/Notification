@@ -108,6 +108,7 @@ public class AbsensiActivity extends AppCompatActivity {
         String bulan = data_waktu[1];
         date = data_waktu[0];
 
+        Log.e("id_rombel",id_rombel);
 
         if (bulan.equals("01")) {
             month = "Januari";
