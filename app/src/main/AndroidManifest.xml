@@ -15,6 +15,7 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".Activity.InfoRombelActivity"></activity>
         <activity android:name=".Activity.DetailNotifActivity" />
+        <activity android:name=".Activity.DetailinfoActivity"/>
         <activity android:name=".Activity.DaftarActivity" />
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.HomeActivity" />

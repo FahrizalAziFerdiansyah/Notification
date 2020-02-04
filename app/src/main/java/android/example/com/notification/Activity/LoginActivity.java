@@ -110,6 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                         //String waktu_mulai = response.body().getWaktu_mulai();
                         //String waktu_selesai = response.body().getWaktu_selesai();
                         //String nama_pelajaran = response.body().getNama_pelajaran();
+                        String alamat = response.body().getAlamat();
                         String nama_rombel = response.body().getNama_rombel();
                         String id_rombel = response.body().getId_rombel();
                         String jenis_kelamin_siswa = response.body().getJenis_kelamin_siswa();
@@ -132,6 +133,7 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("id_rombel", id_rombel);
                             editor.putString("nama_siswa", nama_siswa);
                             editor.putString("jenis_kelamin_siswa", jenis_kelamin_siswa);
+                            editor.putString("alamat", alamat);
                             editor.putString("nisn", nisn);
                             editor.putBoolean("ceklogin", true);
                             editor.apply();

@@ -28,7 +28,7 @@
             android:layout_width="111dp"
             android:layout_height="114dp"
             android:layout_marginTop="50dp"
-            android:src="@drawable/userpic"
+            android:src="@drawable/logosd"
             app:layout_constraintBottom_toTopOf="@+id/cardView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,19 +40,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Aji Pratama"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
             android:textColor="#000000"
             android:textSize="25sp"
             app:layout_constraintBottom_toTopOf="@+id/cardView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintHorizontal_bias="0.48"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/foto_siswa"
-            app:layout_constraintVertical_bias="0.246" />
+            app:layout_constraintVertical_bias="0.256" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"

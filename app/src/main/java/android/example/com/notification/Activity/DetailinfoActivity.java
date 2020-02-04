@@ -44,7 +44,7 @@ public class DetailinfoActivity extends AppCompatActivity {
         judul.setText(m.getStringExtra("judul"));
         tgl_publish.setText(m.getStringExtra("tgl_publish"));
         description.setText(m.getStringExtra("description"));
-        Picasso.with(DetailinfoActivity.this).load("http://192.168.43.103/sdbadean/vendor/assets/images/info/"+m.getStringExtra("gambar")).into(img_Full);
+        Picasso.with(DetailinfoActivity.this).load("http://sdbadean1.xyz//vendor/assets/images/info/"+m.getStringExtra("gambar")).into(img_Full);
 
 
     }
