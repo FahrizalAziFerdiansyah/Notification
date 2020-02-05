@@ -54,10 +54,10 @@ public class ProfileFragment extends Fragment {
         nama_s.setText(nama);
         String nisn1 = sharedPreferences.getString("nisn", "2");
         nisn.setText(nisn1);
-        String rombel1 = sharedPreferences.getString("rombel", "3");
+        String rombel1 = sharedPreferences.getString("nama_rombel", "3");
         rombel.setText(rombel1);
-        String jk1 = sharedPreferences.getString("jk", "4");
-        jk.setText(jk1);
+        String jenis_kelamin_siswa = sharedPreferences.getString("jenis_kelamin_siswa", "5");
+        jk.setText(jenis_kelamin_siswa);
 
         btnlogout.setOnClickListener(new View.OnClickListener() {
             @Override

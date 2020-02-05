@@ -49,6 +49,7 @@
                 <EditText
                     android:id="@+id/et_nisn"
                     style="@style/modifiedEditText"
+                    android:textSize="20sp"
                     android:hint="@string/login_nisn_hint"
                     android:maxLines="1"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -60,6 +61,7 @@
                 <EditText
                     android:id="@+id/et_password"
                     style="@style/modifiedEditText"
+                    android:textSize="20sp"
                     android:hint="@string/login_password_hint"
                     android:maxLines="1"
                     android:inputType="textPassword"/>
