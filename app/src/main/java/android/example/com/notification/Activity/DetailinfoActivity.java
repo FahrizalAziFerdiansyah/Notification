@@ -8,6 +8,7 @@ import android.example.com.notification.Model.Info;
 import android.example.com.notification.R;
 import android.example.com.notification.RestApi.ApiInterface;
 import android.os.Bundle;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -47,6 +48,7 @@ public class DetailinfoActivity extends AppCompatActivity {
         description.setText(m.getStringExtra("description"));
         Picasso.with(DetailinfoActivity.this).load("http://sdbadean1.xyz//vendor/assets/images/info/"+m.getStringExtra("gambar")).resize(0,300).into(img_Full);
         Picasso.with(DetailinfoActivity.this).load("http://sdbadean1.xyz//vendor/assets/images/info/"+m.getStringExtra("gambar")).resize(160, 127).into(img);
+
 
     }
 }

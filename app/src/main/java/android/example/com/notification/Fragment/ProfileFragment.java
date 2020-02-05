@@ -75,6 +75,7 @@ public class ProfileFragment extends Fragment {
                 editor.clear();
                 editor.commit();
                 v.getContext().startActivity(m);
+                getActivity().finish();
 
             }
         });

@@ -143,6 +143,7 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putBoolean("ceklogin", true);
                             editor.apply();
                             startActivity(intent);
+                            finish();
                         }
 
                     }
