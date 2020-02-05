@@ -41,9 +41,9 @@ public class NotifikasiAdapter extends RecyclerView.Adapter<NotifikasiAdapter.No
     public void onBindViewHolder(@NonNull NotifikasiViewHolder holder, final int position) {
         final Notifikasi model = notifikasiArrayList.get(position);
 
-        holder.rv_notifikasi_tipe.setText(model.getNama_pelajaran());
+        holder.rv_notifikasi_tipe.setText(model.getNama_kategori());
         //holder.rv_notifikasi_date.setText(model.getTanggal_absensi());
-        holder.rv_notifikasi_time.setText(model.getWaktu_mulai()+"-"+model.getWaktu_selesai());
+        holder.rv_notifikasi_time.setText(model.getWaktu_mulai());
         holder.rv_notifikasi_kehadiran.setText(model.getKeterangan());
         holder.cardview_notifikasi.setOnClickListener(new View.OnClickListener() {
             @Override
