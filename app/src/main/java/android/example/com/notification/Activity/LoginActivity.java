@@ -102,6 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResponse(Call<Siswa> call, Response<Siswa> response) {
                         progressDialog.dismiss();
                         String id_device = response.body().getId_device();
+                        String id_siswa = response.body().getId_siswa();
                         String nisn = response.body().getNisn();
                         String token = response.body().getToken();
                         String nama_siswa = response.body().getNama_siswa();
@@ -126,7 +127,7 @@ public class LoginActivity extends AppCompatActivity {
                             //editor.putString("tanggal_absensi", tanggal_absensi);
                             //editor.putString("waktu_mulai", waktu_mulai);
                             //editor.putString("waktu_selesai", waktu_selesai);
-                            //editor.putString("nama_pelajaran", nama_pelajaran);
+                            editor.putString("id_siswa", id_siswa);
                             editor.putString("nama_rombel", nama_rombel);
                             editor.putString("id_rombel", id_rombel);
                             editor.putString("nama_siswa", nama_siswa);

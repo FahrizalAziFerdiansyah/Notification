@@ -81,6 +81,9 @@
                     android:padding="10dp"></Spinner>
 
                 <Button
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="@color/colorToolbar"
                     android:id="@+id/lain"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

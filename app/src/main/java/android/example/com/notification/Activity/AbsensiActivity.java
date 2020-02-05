@@ -68,7 +68,7 @@ public class AbsensiActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AbsensiActivity.this, MapelActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                startActivity(new Intent(AbsensiActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
             }
         });
         tanggal = findViewById(R.id.tanggal);
@@ -108,7 +108,7 @@ public class AbsensiActivity extends AppCompatActivity {
         String bulan = data_waktu[1];
         date = data_waktu[0];
 
-        Log.e("id_rombel",id_rombel);
+
 
         if (bulan.equals("01")) {
             month = "Januari";
@@ -150,7 +150,9 @@ public class AbsensiActivity extends AppCompatActivity {
                 refresh();
             }
         });
-
+        Log.e("id_rombel",id_rombel);
+        Log.e("id_month",month);
+        Log.e("id_siswa",id_siswa);
         swLayout = findViewById(R.id.swlayout);
 
         swLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

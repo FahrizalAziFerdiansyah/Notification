@@ -7,8 +7,6 @@ public class Notifikasi {
     String keterangan;
     @SerializedName("waktu_mulai")
     String waktu_mulai;
-    @SerializedName("nama_pelajaran")
-    String nama_pelajaran;
     @SerializedName("waktu_selesai")
     String waktu_selesai;
     @SerializedName("nama_gtk")
@@ -25,10 +23,9 @@ public class Notifikasi {
     public Notifikasi() {
     }
 
-    public Notifikasi(String keterangan, String waktu_mulai, String nama_pelajaran, String waktu_selesai, String nama_gtk, String tanggal_absensi, String nama_kategori, String no_wa) {
+    public Notifikasi(String keterangan, String waktu_mulai, String waktu_selesai, String nama_gtk, String tanggal_absensi, String nama_kategori, String no_wa) {
         this.keterangan = keterangan;
         this.waktu_mulai = waktu_mulai;
-        this.nama_pelajaran = nama_pelajaran;
         this.waktu_selesai = waktu_selesai;
         this.nama_gtk = nama_gtk;
         this.tanggal_absensi = tanggal_absensi;
@@ -50,14 +47,6 @@ public class Notifikasi {
 
     public void setWaktu_mulai(String waktu_mulai) {
         this.waktu_mulai = waktu_mulai;
-    }
-
-    public String getNama_pelajaran() {
-        return nama_pelajaran;
-    }
-
-    public void setNama_pelajaran(String nama_pelajaran) {
-        this.nama_pelajaran = nama_pelajaran;
     }
 
     public String getWaktu_selesai() {
