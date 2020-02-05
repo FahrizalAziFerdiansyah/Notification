@@ -49,7 +49,7 @@ public class InfoAdapter extends RecyclerView.Adapter<InfoAdapter.InfoViewHolder
 //                .apply(new RequestOptions().transform(new RoundedCorners(50)))
 //                .into(holder.gambar_info);
         final String urlGambarBerita = "http://sdbadean1.xyz//vendor/assets/images/info/" + infoList.get(position).getGambar();
-        Picasso.with(mcontext).load(urlGambarBerita).into(holder.gambar_info);
+        Picasso.with(mcontext).load(urlGambarBerita).resize(250,150).into(holder.gambar_info);
         holder.judul.setText(infoList.get(position).getJudul());
         holder.tgl_publish.setText(infoList.get(position).getTgl_publish());
         holder.description.setText(infoList.get(position).getDescription());

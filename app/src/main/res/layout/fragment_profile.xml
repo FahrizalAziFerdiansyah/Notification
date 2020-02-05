@@ -173,9 +173,10 @@
                 <ImageView
                     android:layout_width="36dp"
                     android:layout_height="36dp"
-                    android:src="@drawable/ic_google_plus" />
+                    android:src="@drawable/aaaaa" />
 
                 <TextView
+                    android:id="@+id/tempat_lahir"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -194,11 +195,11 @@
                 <ImageView
                     android:layout_width="36dp"
                     android:layout_height="36dp"
-                    android:src="@drawable/ic_google_plus" />
+                    android:src="@drawable/s11d" />
 
                 <TextView
+                    android:id="@+id/tanggal_lahir"
                     android:layout_width="wrap_content"
-
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:paddingLeft="20dp"
@@ -216,9 +217,10 @@
                 <ImageView
                     android:layout_width="36dp"
                     android:layout_height="36dp"
-                    android:src="@drawable/ic_google_plus" />
+                    android:src="@drawable/sas" />
 
                 <TextView
+                    android:id="@+id/alamat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -227,27 +229,7 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="horizontal"
-                android:paddingLeft="20dp">
 
-                <ImageView
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:src="@drawable/ic_google_plus" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:paddingLeft="20dp"
-                    android:text="Show all comments"
-                    android:textStyle="bold" />
-            </LinearLayout>
         </LinearLayout>
 
         <Button
@@ -257,7 +239,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/bg_input"
             android:text="KELUAR"
-            android:textColor="#fff"
+            android:textColor="#2B2B2B"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

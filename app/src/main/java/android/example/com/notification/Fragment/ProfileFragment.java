@@ -22,7 +22,7 @@ import android.widget.TextView;
 
 public class ProfileFragment extends Fragment {
 
-    TextView nama_s, nisn, jk, rombel;
+    TextView nama_s, nisn, jk, rombel, tempat_lahir, tanggal_lahir, alamat;
     Button btnlogout;
     boolean ceklogin;
     ApiInterface mApiInterface;
@@ -43,6 +43,9 @@ public class ProfileFragment extends Fragment {
         nisn = view.findViewById(R.id.nisn_profil);
         jk = view.findViewById(R.id.jk_profil);
         rombel = view.findViewById(R.id.rombel_profil);
+        tempat_lahir = view.findViewById(R.id.tempat_lahir);
+        tanggal_lahir = view.findViewById(R.id.tanggal_lahir);
+        alamat = view.findViewById(R.id.alamat);
         btnlogout = view.findViewById(R.id.btn_logout);
 
         mApiInterface = UtilsApi.getAPIService();
@@ -58,6 +61,12 @@ public class ProfileFragment extends Fragment {
         rombel.setText(rombel1);
         String jenis_kelamin_siswa = sharedPreferences.getString("jenis_kelamin_siswa", "5");
         jk.setText(jenis_kelamin_siswa);
+        String tempat = sharedPreferences.getString("tempat_lahir", "6");
+        tempat_lahir.setText(tempat);
+        String tanggal = sharedPreferences.getString("tanggal_lahir", "7");
+        tanggal_lahir.setText(tanggal);
+        String alamat1 = sharedPreferences.getString("alamat", "8");
+        alamat.setText(alamat1);
 
         btnlogout.setOnClickListener(new View.OnClickListener() {
             @Override
