@@ -44,8 +44,16 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+    <style name="parent2">
+        <item name="android:layout_width">215dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
 
     <style name="modifiedEditText" parent="parent">
+        <item name="android:textSize">@dimen/newsMoreTextSize</item>
+        <item name="android:backgroundTint">@color/primaryTextColor</item>
+    </style>
+    <style name="modifiedEditText2" parent="parent2">
         <item name="android:textSize">@dimen/newsMoreTextSize</item>
         <item name="android:backgroundTint">@color/primaryTextColor</item>
     </style>

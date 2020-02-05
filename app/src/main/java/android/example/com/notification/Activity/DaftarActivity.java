@@ -42,19 +42,19 @@ public class DaftarActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_daftar);
-        Toolbar toolbar = findViewById(R.id.toolbar1);
+        setContentView(R.layout.activity_registrasi);
+//        Toolbar toolbar = findViewById(R.id.toolbar1);
         daftar = findViewById(R.id.daftar);
         daftar.setOnClickListener(this);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Daftar");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DaftarActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-            }
-        });
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setTitle("Daftar");
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(DaftarActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+//            }
+//        });
         nisn = findViewById(R.id.nisn);
         cek = findViewById(R.id.cek);
         cek.setOnClickListener(this);
@@ -180,5 +180,8 @@ public class DaftarActivity extends AppCompatActivity implements View.OnClickLis
 
         dialog.show();
 
+    }
+    public void onLoginClick(View view) {
+        startActivity(new Intent(DaftarActivity.this, LoginActivity.class));
     }
 }
