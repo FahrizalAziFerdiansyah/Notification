@@ -83,6 +83,13 @@
                     android:layout_toRightOf="@id/sp_bulan"
                     android:text="Pilih"
                     android:textAllCaps="false" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_jadwal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sp_bulan"/>
+                
                 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
                     xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/card_empty"
@@ -95,7 +102,7 @@
                     app:cardCornerRadius="20dp">
 
 
-                 
+
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="250dp"
@@ -108,7 +115,7 @@
                             android:layout_centerVertical="true"
                             android:layout_margin="16dp"
                             android:gravity="center"
-                            android:text="Belum Jadwal"
+                            android:text="Belum Ada Jadwal"
                             android:textColor="#262626"
                             android:textSize="20sp"
                             android:textStyle="bold" />
