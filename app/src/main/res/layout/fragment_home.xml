@@ -168,7 +168,8 @@
                         android:id="@+id/menu3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Info Tugas"
+                        android:text="Info Pelajaran"
+                        android:gravity="center"
                         android:textColor="#172646"
                         android:textSize="16sp"
                         tools:ignore="DuplicateIds" />
