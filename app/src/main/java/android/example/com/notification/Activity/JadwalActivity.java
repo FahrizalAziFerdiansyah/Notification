@@ -86,9 +86,12 @@ public class JadwalActivity extends AppCompatActivity {
         int hari=calendar.get(Calendar.DAY_OF_WEEK);
 
         switch (hari){
+            case Calendar.SATURDAY:
+                day.setText("Sabtu");
+                id_hari="6";
             case Calendar.SUNDAY:
-              day.setText("Minggu");
-              id_hari="7";
+                day.setText("Minggu");
+                id_hari="7";
             case Calendar.MONDAY:
                 day.setText("Senin");
                 id_hari="1";
@@ -104,9 +107,7 @@ public class JadwalActivity extends AppCompatActivity {
             case Calendar.FRIDAY:
                 day.setText("Jumat");
                 id_hari="5";
-            case Calendar.SATURDAY:
-                day.setText("Sabtu");
-                id_hari="6";
+
 
         }
 
@@ -121,16 +122,22 @@ public class JadwalActivity extends AppCompatActivity {
                 loadingView.setVisibility(View.VISIBLE);
                 if (sp_hari.getSelectedItem().toString().equals("Senin")){
                     id_hari="1";
+                    day.setText("Senin");
                 }else if (sp_hari.getSelectedItem().toString().equals("Selasa")){
                     id_hari="2";
+                    day.setText("Selasa");
                 }else if (sp_hari.getSelectedItem().toString().equals("Rabu")){
                     id_hari="3";
+                    day.setText("Rabu");
                 }else if (sp_hari.getSelectedItem().toString().equals("Kamis")){
                     id_hari="4";
+                    day.setText("Kamis");
                 }else if (sp_hari.getSelectedItem().toString().equals("Jumat")){
                     id_hari="5";
+                    day.setText("Jumat");
                 }else if (sp_hari.getSelectedItem().toString().equals("Sabtu")){
                     id_hari="6";
+                    day.setText("Sabtu");
                 }
 
                 refresh();
