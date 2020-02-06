@@ -31,6 +31,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:fontFamily="@font/monster_font"
             android:id="@+id/nama_siswa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,6 +50,7 @@
             android:layout_marginRight="10dp" />
 
         <TextView
+            android:fontFamily="@font/monster_font"
             android:id="@+id/nisn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,6 +79,7 @@
 
 
             <TextView
+                android:fontFamily="@font/monster_font"
                 android:id="@+id/mainMenu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -114,13 +117,14 @@
                         android:src="@drawable/iclist" />
 
                     <TextView
+                        android:fontFamily="@font/monster_font"
                         android:id="@+id/menu1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Absensi Siswa"
                         android:gravity="center"
                         android:textColor="#172646"
-                        android:textSize="16sp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -140,13 +144,14 @@
                         android:src="@drawable/icnet" />
 
                     <TextView
+                        android:fontFamily="@font/monster_font"
                         android:gravity="center"
                         android:id="@+id/menu2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Jadwal Pelajaran"
                         android:textColor="#172646"
-                        android:textSize="16sp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -166,13 +171,14 @@
                         android:src="@drawable/icplug" />
 
                     <TextView
+                        android:fontFamily="@font/monster_font"
                         android:id="@+id/menu3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Info Pelajaran"
                         android:gravity="center"
                         android:textColor="#172646"
-                        android:textSize="16sp"
+                        android:textSize="12sp"
                         tools:ignore="DuplicateIds" />
                 </LinearLayout>
 
@@ -191,65 +197,75 @@
                         android:src="@drawable/icapps" />
 
                     <TextView
+                        android:fontFamily="@font/monster_font"
                         android:id="@+id/menu4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Reminder Orangtua"
                         android:gravity="center"
                         android:textColor="#172646"
-                        android:textSize="16sp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout2"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:layout_marginTop="5dp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
-
-            <TextView
-                android:id="@+id/news"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="8dp"
-                android:text="Info Sekolah"
-                android:textColor="#818181"
-                android:textSize="16sp" />
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout1"
+            tools:layout_editor_absoluteX="0dp">
 
             <LinearLayout
+                android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="400dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
 
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/monster_font"
+                    android:text="Info Sekolah"
+                    android:textColor="#818181"
+                    android:textSize="16sp" />
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
-                    <androidx.recyclerview.widget.RecyclerView
-
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:foregroundGravity="center"
-                        android:id="@+id/rv_info"
-                        android:layout_centerInParent="true"
-                        android:padding="10dp"
-                        android:layoutAnimation="@anim/layout_animation_fall_down">
-                    </androidx.recyclerview.widget.RecyclerView>
+                        android:layout_height="match_parent">
 
-                </RelativeLayout>
+                        <androidx.recyclerview.widget.RecyclerView
+
+                            android:id="@+id/rv_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:foregroundGravity="center"
+                            android:layoutAnimation="@anim/layout_animation_fall_down"
+                            android:padding="10dp"></androidx.recyclerview.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
-
-        </LinearLayout>
+        </ScrollView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,6 +35,7 @@
                     android:src="@drawable/ic_register_hero" />
 
                 <TextView
+                    android:fontFamily="@font/monster_font"
                     android:id="@+id/nama_sd"
                     style="@style/viewParent.headerText.NoMode"
                     android:layout_alignParentLeft="true"

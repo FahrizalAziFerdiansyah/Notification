@@ -30,6 +30,7 @@
             android:background="@drawable/bullhorn" />
         </androidx.cardview.widget.CardView>
         <TextView
+            android:fontFamily="@font/monster_font"
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="bold"

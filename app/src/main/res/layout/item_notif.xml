@@ -30,6 +30,7 @@
             android:paddingLeft="8dp">
 
             <TextView
+                android:fontFamily="@font/monster_font"
                 android:id="@+id/rv_notifikasi_tipe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,6 +52,7 @@
                     android:text="10 Agustus 2019" />
 
                 <TextView
+                    android:fontFamily="@font/monster_font"
                     android:layout_gravity="center"
                     android:id="@+id/rv_notifikasi_time"
                     android:layout_width="wrap_content"
@@ -71,6 +73,7 @@
                     app:cardCornerRadius="20dp">
 
                     <TextView
+                        android:fontFamily="@font/monster_font"
                         android:id="@+id/rv_notifikasi_kehadiran"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

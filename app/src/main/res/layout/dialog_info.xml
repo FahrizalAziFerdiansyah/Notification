@@ -28,6 +28,7 @@
                     android:src="@drawable/homework" />
 
                 <TextView
+                    android:fontFamily="@font/monster_font"
                     android:id="@+id/txt_pr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -52,6 +53,7 @@
                     android:src="@drawable/checklist" />
 
                 <TextView
+                    android:fontFamily="@font/monster_font"
                     android:id="@+id/txt_ulangan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -80,12 +82,14 @@
             android:layout_below="@id/view">
 
             <TextView
+                android:fontFamily="@font/monster_font"
                 android:id="@+id/mapel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Mapel" />
 
             <TextView
+                android:fontFamily="@font/monster_font"
                 android:id="@+id/deadline"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -93,6 +97,7 @@
                 android:text="Deadline" />
 
             <TextView
+                android:fontFamily="@font/monster_font"
                 android:id="@+id/keterangan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

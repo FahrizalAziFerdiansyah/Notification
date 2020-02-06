@@ -30,6 +30,7 @@
                 android:layout_marginVertical="16dp">
 
                 <TextView
+                    android:fontFamily="@font/monster_font"
                     android:id="@+id/nama"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -38,6 +39,7 @@
                     android:text="Nama" />
 
                 <TextView
+                    android:fontFamily="@font/monster_font"
                     android:id="@+id/tanggal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -45,6 +47,7 @@
                     android:text="tanggal" />
 
                 <TextView
+                    android:fontFamily="@font/monster_font"
                     android:id="@+id/rombel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -52,6 +55,7 @@
                     android:text="rombel" />
 
                 <TextView
+                    android:fontFamily="@font/monster_font"
                     android:id="@+id/bulan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -61,6 +65,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:fontFamily="@font/monster_font"
                     android:id="@+id/txt_pilih"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -73,7 +78,7 @@
 
                 <Spinner
                     android:id="@+id/sp_bulan"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/txt_pilih"
                     android:layout_marginBottom="20dp"
@@ -118,6 +123,7 @@
                         android:gravity="center|left">
 
                         <TextView
+                            android:fontFamily="@font/monster_font"
                             android:id="@+id/mapel"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -137,6 +143,7 @@
                             android:weightSum="4">
 
                             <TextView
+                                android:fontFamily="@font/monster_font"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/gambar"
@@ -150,6 +157,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
+                                android:fontFamily="@font/monster_font"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/h"
@@ -163,6 +171,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
+                                android:fontFamily="@font/monster_font"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/i"
@@ -176,6 +185,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
+                                android:fontFamily="@font/monster_font"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/s"
@@ -197,6 +207,7 @@
                             android:weightSum="4">
 
                             <TextView
+                                android:fontFamily="@font/monster_font"
                                 android:id="@+id/h"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -210,6 +221,7 @@
                                 android:textSize="16sp" />
 
                             <TextView
+                                android:fontFamily="@font/monster_font"
                                 android:id="@+id/i"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -223,6 +235,7 @@
                                 android:textSize="16sp" />
 
                             <TextView
+                                android:fontFamily="@font/monster_font"
                                 android:id="@+id/s"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -236,6 +249,7 @@
                                 android:textSize="16sp" />
 
                             <TextView
+                                android:fontFamily="@font/monster_font"
                                 android:id="@+id/a"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -277,6 +291,7 @@
                         android:gravity="center|left">
 
                         <TextView
+                            android:fontFamily="@font/monster_font"
                             android:id="@+id/kosong"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

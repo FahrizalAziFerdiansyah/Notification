@@ -1,6 +1,7 @@
 package android.example.com.notification.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -59,6 +60,17 @@ public class JadwalActivity extends AppCompatActivity {
         day=findViewById(R.id.hari);
         namasi=findViewById(R.id.nama);
         rombel=findViewById(R.id.rombel);
+        Toolbar toolbar = findViewById(R.id.toolbar1);
+
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Data Jadwal");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(JadwalActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            }
+        });
 
         sharedPreferences = JadwalActivity.this.getSharedPreferences("remember", Context.MODE_PRIVATE);
         String nama = sharedPreferences.getString("nama_siswa", "1");
@@ -76,7 +88,7 @@ public class JadwalActivity extends AppCompatActivity {
         switch (hari){
             case Calendar.SUNDAY:
               day.setText("Minggu");
-              id_hari="0";
+              id_hari="7";
             case Calendar.MONDAY:
                 day.setText("Senin");
                 id_hari="1";
@@ -89,6 +101,13 @@ public class JadwalActivity extends AppCompatActivity {
             case Calendar.THURSDAY:
                 day.setText("Kamis");
                 id_hari="4";
+            case Calendar.FRIDAY:
+                day.setText("Jumat");
+                id_hari="5";
+            case Calendar.SATURDAY:
+                day.setText("Sabtu");
+                id_hari="6";
+           
         }
 
         refresh();
