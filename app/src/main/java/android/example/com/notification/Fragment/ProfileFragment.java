@@ -22,12 +22,13 @@ import android.widget.TextView;
 
 public class ProfileFragment extends Fragment {
 
-    TextView nama_s, nisn, jk, rombel, tempat_lahir, tanggal_lahir, alamat;
+    TextView nama_s, nisn, jk, rombel, ttl, alamat;
     Button btnlogout;
     boolean ceklogin;
     ApiInterface mApiInterface;
     SharedPreferences.Editor editor;
     SharedPreferences sharedPreferences;
+    String tempat_lahir, tanggal_lahir;
 
 
     public ProfileFragment() {
@@ -39,15 +40,13 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-        nama_s = view.findViewById(R.id.nama_profil);
+        nama_s = view.findViewById(R.id.nama_siswa);
         nisn = view.findViewById(R.id.nisn_profil);
         jk = view.findViewById(R.id.jk_profil);
-        rombel = view.findViewById(R.id.rombel_profil);
-        tempat_lahir = view.findViewById(R.id.tempat_lahir);
-        tanggal_lahir = view.findViewById(R.id.tanggal_lahir);
+        rombel = view.findViewById(R.id.nama_rombel);
+        ttl = view.findViewById(R.id.ttl);
         alamat = view.findViewById(R.id.alamat);
-        btnlogout = view.findViewById(R.id.btn_logout);
-
+        btnlogout = view.findViewById(R.id.btnlogout);
         mApiInterface = UtilsApi.getAPIService();
         sharedPreferences = getActivity().getSharedPreferences("remember", Context.MODE_PRIVATE);
         editor =  sharedPreferences.edit();
@@ -66,10 +65,9 @@ public class ProfileFragment extends Fragment {
             jk.setText("Laki-laki");
         }
 
-        String tempat = sharedPreferences.getString("tempat_lahir", "6");
-        tempat_lahir.setText(tempat);
-        String tanggal = sharedPreferences.getString("tanggal_lahir", "7");
-        tanggal_lahir.setText(tanggal);
+         tempat_lahir = sharedPreferences.getString("tempat_lahir","6");
+        tanggal_lahir = sharedPreferences.getString("tanggal_lahir","7");
+        ttl.setText(tempat_lahir+","+tanggal_lahir);
         String alamat1 = sharedPreferences.getString("alamat", "8");
         alamat.setText(alamat1);
 

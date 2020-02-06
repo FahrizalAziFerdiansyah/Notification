@@ -27,5 +27,6 @@
     </string-array>
     <string name="login_password_hint">Password Anda</string>
     <string name="login_nisn_hint">NISN Siswa</string>
+    <string name="app_name2">Detail Info</string>
 
 </resources>

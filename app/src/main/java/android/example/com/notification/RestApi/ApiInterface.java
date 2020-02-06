@@ -7,6 +7,7 @@ import android.example.com.notification.Model.GetInfoMapel;
 import android.example.com.notification.Model.GetMapel;
 import android.example.com.notification.Model.GetNotifikasi;
 import android.example.com.notification.Model.GetPelajaran;
+import android.example.com.notification.Model.GetReminder;
 import android.example.com.notification.Model.GetSiswa;
 import android.example.com.notification.Model.Notifikasi;
 import android.example.com.notification.Model.PostDevices;
@@ -37,6 +38,9 @@ public interface ApiInterface {
 
     @GET("List_info")
     Call<GetInfo> getInfo();
+
+    @GET("List_reminder")
+    Call<GetReminder> getReminder();
 
     @GET("Absen")
     Call<GetPelajaran> getPelajaran();

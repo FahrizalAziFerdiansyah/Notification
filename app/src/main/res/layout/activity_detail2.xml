@@ -20,7 +20,7 @@
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-            app:title="Detail Info">
+            app:title="@string/app_name2">
 
             <ImageView
                 android:id="@+id/gambarfull_detail"
