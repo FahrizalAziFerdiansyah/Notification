@@ -6,11 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Activity.JadwalActivity">
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swlayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
 
         <LinearLayout
@@ -37,7 +32,16 @@
                     android:text="rombel" />
 
                 <TextView
-                    android:id="@+id/bulan"
+                    android:id="@+id/txt_hari"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jadwal Pelajaran Hari "
+                    android:textColor="#262626"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_toRightOf="@id/txt_hari"
+                    android:id="@+id/hari"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hari"
@@ -48,7 +52,7 @@
                     android:id="@+id/nama"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/bulan"
+                    android:layout_below="@id/hari"
                     android:layout_marginTop="10dp"
                     android:text="Nama" />
 
@@ -58,21 +62,22 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/rombel"
                     android:layout_marginTop="10dp"
-                    android:text="Pilih Hari :"
+                    android:text="Lihat Hari Lain:"
                     android:textColor="#262626"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <Spinner
-                    android:id="@+id/sp_bulan"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/sp_hari"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/txt_pilih"
                     android:layout_marginBottom="20dp"
-                    android:entries="@array/bulan"
+                    android:entries="@array/hari"
                     android:padding="10dp"></Spinner>
 
                 <Button
+
                     android:foreground="?android:attr/selectableItemBackground"
                     android:textColor="@android:color/white"
                     android:backgroundTint="@color/colorToolbar"
@@ -80,57 +85,65 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/txt_pilih"
-                    android:layout_toRightOf="@id/sp_bulan"
+                    android:layout_toRightOf="@id/sp_hari"
                     android:text="Pilih"
                     android:textAllCaps="false" />
-
+                <RelativeLayout
+                    android:layout_below="@id/sp_hari"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <ProgressBar
+                    android:id="@+id/loading_spinner"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/white"
+                    android:visibility="visible" />
                 <androidx.recyclerview.widget.RecyclerView
+                    android:layout_margin="5dp"
                     android:id="@+id/rv_jadwal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/sp_bulan"/>
-
-                <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/card_empty"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="5dp"
-                    android:visibility="gone"
-                    android:layout_below="@id/sp_bulan"
-                    app:cardCornerRadius="20dp">
-
-
-
-                    <RelativeLayout
+                   />
+                    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/card_empty"
                         android:layout_width="match_parent"
-                        android:layout_height="250dp"
-                        android:gravity="center|left">
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:visibility="visible"
+                        app:cardCornerRadius="20dp">
 
-                        <TextView
-                            android:id="@+id/kosong"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_margin="16dp"
-                            android:gravity="center"
-                            android:text="Belum Ada Jadwal"
-                            android:textColor="#262626"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:layout_height="250dp"
+                            android:gravity="center|left">
 
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_below="@id/kosong"
-                            android:layout_centerInParent="true"
-                            android:layout_marginRight="16dp"
-                            android:layout_marginBottom="30dp"
-                            android:src="@drawable/gku" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:id="@+id/kosong"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="16dp"
+                                android:gravity="center"
+                                android:text="Tidak Ada Jadwal"
+                                android:textColor="#262626"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_below="@id/kosong"
+                                android:layout_centerInParent="true"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="30dp"
+                                android:src="@drawable/gku" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
             </RelativeLayout>
         </LinearLayout>
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

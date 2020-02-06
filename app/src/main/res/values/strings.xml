@@ -17,6 +17,14 @@
         <item>November</item>
         <item>Desember</item>
     </string-array>
+    <string-array name="hari">
+        <item>Senin</item>
+        <item>Selasa</item>
+        <item>Rabu</item>
+        <item>Kamis</item>
+        <item>Jumat</item>
+        <item>Sabtu</item>
+    </string-array>
     <string name="login_password_hint">Password Anda</string>
     <string name="login_nisn_hint">NISN Siswa</string>
 

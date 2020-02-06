@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.example.com.notification.Activity.AbsensiActivity;
 import android.example.com.notification.Activity.InfoRombelActivity;
+import android.example.com.notification.Activity.JadwalActivity;
 import android.example.com.notification.Adapter.InfoAdapter;
 import android.example.com.notification.Model.GetInfo;
 import android.example.com.notification.Model.Info;
@@ -35,7 +36,7 @@ import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
     TextView nama_siswa, nisn, menu1, menu2, menu3, menu4, menu;
-    ImageView foto_siswa,absen,icplug;
+    ImageView foto_siswa,absen,icplug,jadwal;
     RecyclerView rv_card;
     ArrayList<Info> infoList = new ArrayList<>();
     InfoAdapter infoAdapter;
@@ -91,6 +92,15 @@ public class HomeFragment extends Fragment {
         rv_card.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
         rv_card.setLayoutManager(mLayoutManager);
+
+        jadwal=view.findViewById(R.id.jadwal);
+        jadwal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getContext(), JadwalActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 

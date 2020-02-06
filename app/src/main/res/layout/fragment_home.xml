@@ -130,16 +130,20 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:id="@+id/jadwal"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginBottom="8dp"
                         android:src="@drawable/icnet" />
 
                     <TextView
+                        android:gravity="center"
                         android:id="@+id/menu2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Raport"
+                        android:text="Jadwal Pelajaran"
                         android:textColor="#172646"
                         android:textSize="16sp" />
                 </LinearLayout>
