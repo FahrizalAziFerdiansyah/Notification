@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment.ProfileFragment">
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -103,12 +101,10 @@
             android:id="@+id/view6"
             android:layout_width="10dp"
             android:layout_height="255dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginLeft="28dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/batang"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/cardView"
-            app:layout_constraintHorizontal_bias="0.444"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
             app:layout_constraintVertical_bias="0.157" />
@@ -117,111 +113,108 @@
             android:id="@+id/cardView"
             android:layout_width="300dp"
             android:layout_height="200dp"
-            android:layout_marginEnd="28dp"
-            android:layout_marginRight="28dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
             app:cardCornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view6"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
             app:layout_constraintVertical_bias="0.09">
 
             <RelativeLayout
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp">
 
                 <TextView
-                    android:fontFamily="@font/monster_font"
                     android:id="@+id/tv_jk"
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
-                    android:text="Jenis Kelamin   :"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:textSize="13dp"
-                    />
+                    android:fontFamily="@font/monster_font"
+                    android:text="Jenis Kelamin   :"
+                    android:textSize="13dp" />
 
                 <TextView
                     android:id="@+id/jk_profil"
-                    android:fontFamily="@font/monster_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Laki-laki"
-                    android:layout_toRightOf="@+id/tv_jk"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
-                    android:textSize="13dp"/>
+                    android:layout_toRightOf="@+id/tv_jk"
+                    android:fontFamily="@font/monster_font"
+                    android:text="Laki-laki"
+                    android:textSize="13dp" />
+
                 <TextView
                     android:id="@+id/tv_rombel"
-                    android:fontFamily="@font/monster_font"
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
-                    android:text="Nama Rombel   :"
-                    android:layout_marginLeft="10dp"
                     android:layout_below="@+id/jk_profil"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:textSize="13dp"
-                    />
+                    android:fontFamily="@font/monster_font"
+                    android:text="Nama Rombel   :"
+                    android:textSize="13dp" />
 
                 <TextView
                     android:id="@+id/nama_rombel"
-                    android:fontFamily="@font/monster_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1A"
-                    android:layout_toRightOf="@+id/tv_rombel"
                     android:layout_below="@+id/jk_profil"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
-                    android:textSize="13dp"/>
+                    android:layout_toRightOf="@+id/tv_rombel"
+                    android:fontFamily="@font/monster_font"
+                    android:text="1A"
+                    android:textSize="13dp" />
 
                 <TextView
                     android:id="@+id/tv_ttl"
-                    android:fontFamily="@font/monster_font"
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
-                    android:text="Tempat Tanggal Lahir                   :"
-                    android:layout_marginLeft="10dp"
                     android:layout_below="@+id/nama_rombel"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:textSize="13dp"
-                    />
+                    android:fontFamily="@font/monster_font"
+                    android:text="Tempat Tanggal Lahir                   :"
+                    android:textSize="13dp" />
 
                 <TextView
                     android:id="@+id/ttl"
-                    android:fontFamily="@font/monster_font"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="adjlajdladjladjladaldj"
-                    android:layout_toRightOf="@+id/tv_ttl"
                     android:layout_below="@+id/nama_rombel"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
-                    android:textSize="13dp"/>
+                    android:layout_toRightOf="@+id/tv_ttl"
+                    android:fontFamily="@font/monster_font"
+                    android:text="adjlajdladjladjladaldj"
+                    android:textSize="13dp" />
 
                 <TextView
                     android:id="@+id/tv_alamat"
-                    android:fontFamily="@font/monster_font"
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
-                    android:text="Alamat               :"
-                    android:layout_marginLeft="10dp"
                     android:layout_below="@+id/ttl"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
-                    android:textSize="13dp"
-                    />
+                    android:fontFamily="@font/monster_font"
+                    android:text="Alamat               :"
+                    android:textSize="13dp" />
 
                 <TextView
                     android:id="@+id/alamat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="adjlajdladjladjladaldj"
-                    android:layout_toRightOf="@+id/tv_alamat"
                     android:layout_below="@+id/ttl"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
-                    android:textSize="15dp"/>
+                    android:layout_toRightOf="@+id/tv_alamat"
+                    android:text="adjlajdladjladjladaldj"
+                    android:textSize="15dp" />
 
 
             </RelativeLayout>
@@ -230,16 +223,16 @@
 
         <Button
             android:id="@+id/btnlogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_input"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ic_reply_all_black_24dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView4"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Keluar"
-            app:layout_constraintHorizontal_bias="0.894"
-            app:layout_constraintStart_toEndOf="@+id/view6"
-            app:layout_constraintTop_toBottomOf="@+id/cardView"
-            app:layout_constraintVertical_bias="0.112" />
+            app:layout_constraintHorizontal_bias="0.947"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -47,6 +47,7 @@
                 style="@style/parent"
                 android:layout_marginTop="@dimen/loginViewsMargin">
                 <EditText
+                    android:fontFamily="@font/monster_font"
                     android:id="@+id/et_nisn"
                     style="@style/modifiedEditText"
                     android:textSize="20sp"
@@ -59,6 +60,7 @@
                 style="@style/parent"
                 android:layout_marginTop="@dimen/loginViewsMargin">
                 <EditText
+                    android:fontFamily="@font/monster_font"
                     android:id="@+id/et_password"
                     style="@style/modifiedEditText"
                     android:textSize="20sp"
