@@ -1,7 +1,6 @@
 package android.example.com.notification.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.example.com.notification.Fragment.HomeFragment;
@@ -9,7 +8,7 @@ import android.example.com.notification.Model.Info;
 import android.example.com.notification.R;
 import android.example.com.notification.RestApi.ApiInterface;
 import android.os.Bundle;
-import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -36,17 +35,6 @@ public class DetailinfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail2);
 
-        Toolbar toolbar = findViewById(R.id.toolbar1);
-
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Detail Informasi");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-       toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DetailinfoActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-            }
-        });
         judul = findViewById(R.id.judul_detail);
         tgl_publish = findViewById(R.id.tgl_publish);
         description = findViewById(R.id.description_detail);
@@ -60,6 +48,7 @@ public class DetailinfoActivity extends AppCompatActivity {
         description.setText(m.getStringExtra("description"));
         Picasso.with(DetailinfoActivity.this).load("http://sdbadean1.xyz//vendor/assets/images/info/"+m.getStringExtra("gambar")).resize(0,300).into(img_Full);
         Picasso.with(DetailinfoActivity.this).load("http://sdbadean1.xyz//vendor/assets/images/info/"+m.getStringExtra("gambar")).resize(160, 127).into(img);
+
 
     }
 }

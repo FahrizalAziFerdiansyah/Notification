@@ -3,21 +3,16 @@ package android.example.com.notification.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.AssetManager;
 import android.example.com.notification.Activity.AbsensiActivity;
 import android.example.com.notification.Activity.InfoRombelActivity;
-import android.example.com.notification.Activity.MapelActivity;
 import android.example.com.notification.Adapter.InfoAdapter;
 import android.example.com.notification.Model.GetInfo;
 import android.example.com.notification.Model.Info;
-import android.example.com.notification.RestApi.ApiClient;
 import android.example.com.notification.RestApi.ApiInterface;
 import android.example.com.notification.RestApi.UtilsApi;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,7 +27,6 @@ import android.view.animation.LayoutAnimationController;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -148,6 +142,7 @@ public class HomeFragment extends Fragment {
         r.scheduleLayoutAnimation();
 
     }
+
 
 
 }
