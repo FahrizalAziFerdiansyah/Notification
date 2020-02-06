@@ -36,6 +36,8 @@ public class MapelAdapter extends RecyclerView.Adapter<MapelAdapter.MyViewHolder
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
         holder.nama_kateegori.setText(mapelList.get(position).getNama_kategori());
+        holder.waktu_mulai.setText(mapelList.get(position).getWaktu_mulai());
+        holder.gtk.setText(mapelList.get(position).getNama_gtk());
    /*     holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,10 +56,12 @@ public class MapelAdapter extends RecyclerView.Adapter<MapelAdapter.MyViewHolder
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView nama_kateegori;
+        TextView nama_kateegori,waktu_mulai,gtk;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             nama_kateegori=itemView.findViewById(R.id.nama_kategori);
+            waktu_mulai=itemView.findViewById(R.id.waktu_mulai);
+            gtk=itemView.findViewById(R.id.gtk);
         }
     }
 }
