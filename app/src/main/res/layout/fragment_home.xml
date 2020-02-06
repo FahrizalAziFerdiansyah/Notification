@@ -14,7 +14,7 @@
             android:id="@+id/view3"
             android:layout_width="match_parent"
             android:layout_height="230dp"
-            android:background="@drawable/bgheader3"
+            android:background="@drawable/bgheader4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
