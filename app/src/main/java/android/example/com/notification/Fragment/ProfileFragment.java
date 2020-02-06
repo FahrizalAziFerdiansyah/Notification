@@ -17,12 +17,14 @@ import android.view.ViewGroup;
 
 import android.example.com.notification.R;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
 public class ProfileFragment extends Fragment {
 
     TextView nama_s, nisn, jk, rombel, ttl, alamat;
+    ImageView view5;
     Button btnlogout;
     boolean ceklogin;
     ApiInterface mApiInterface;
@@ -45,6 +47,7 @@ public class ProfileFragment extends Fragment {
         jk = view.findViewById(R.id.jk_profil);
         rombel = view.findViewById(R.id.nama_rombel);
         ttl = view.findViewById(R.id.ttl);
+//        view5 = view.findViewById(R.id.gambarnya);
         alamat = view.findViewById(R.id.alamat);
         btnlogout = view.findViewById(R.id.btnlogout);
         mApiInterface = UtilsApi.getAPIService();
@@ -64,6 +67,12 @@ public class ProfileFragment extends Fragment {
         } else if (jenis_kelamin_siswa.equals("L")){
             jk.setText("Laki-laki");
         }
+
+//        if (jenis_kelamin_siswa.equals("P")){
+//            view5.setImageResource(R.drawable.asais);
+//        }else if(jenis_kelamin_siswa.equals("L")){
+//            view5.setImageResource(R.drawable.laki);
+//        }
 
          tempat_lahir = sharedPreferences.getString("tempat_lahir","6");
         tanggal_lahir = sharedPreferences.getString("tanggal_lahir","7");
