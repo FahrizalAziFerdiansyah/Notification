@@ -60,7 +60,12 @@ public class ProfileFragment extends Fragment {
         String rombel1 = sharedPreferences.getString("nama_rombel", "3");
         rombel.setText(rombel1);
         String jenis_kelamin_siswa = sharedPreferences.getString("jenis_kelamin_siswa", "5");
-        jk.setText(jenis_kelamin_siswa);
+        if(jenis_kelamin_siswa.equals("P")){
+            jk.setText("Perempuan");
+        } else if (jenis_kelamin_siswa.equals("L")){
+            jk.setText("Laki-laki");
+        }
+
         String tempat = sharedPreferences.getString("tempat_lahir", "6");
         tempat_lahir.setText(tempat);
         String tanggal = sharedPreferences.getString("tanggal_lahir", "7");
