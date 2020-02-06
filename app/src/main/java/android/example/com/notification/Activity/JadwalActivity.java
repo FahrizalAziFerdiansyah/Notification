@@ -107,7 +107,7 @@ public class JadwalActivity extends AppCompatActivity {
             case Calendar.SATURDAY:
                 day.setText("Sabtu");
                 id_hari="6";
-           
+
         }
 
         refresh();
