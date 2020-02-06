@@ -71,7 +71,7 @@ public class ProfileFragment extends Fragment {
         btnlogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent m = new Intent(v.getContext(), LoginActivity.class);
+                Intent m = new Intent(v.getContext(), LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 editor.clear();
                 editor.commit();
                 v.getContext().startActivity(m);
