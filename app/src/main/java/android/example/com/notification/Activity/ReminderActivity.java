@@ -1,10 +1,12 @@
 package android.example.com.notification.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.example.com.notification.Adapter.InfoAdapter;
 import android.example.com.notification.Adapter.ReminderAdapter;
 import android.example.com.notification.Model.GetInfo;
@@ -15,6 +17,7 @@ import android.example.com.notification.RestApi.ApiInterface;
 import android.example.com.notification.RestApi.UtilsApi;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 
@@ -34,7 +37,17 @@ public class ReminderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reminder);
+        Toolbar toolbar = findViewById(R.id.toolbar1);
 
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Data Reminder");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ReminderActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            }
+        });
         rv_reminder = findViewById(R.id.rv_reminder);
         mApiInterface = UtilsApi.getAPIService();
         rv_reminder.setHasFixedSize(true);

@@ -42,6 +42,16 @@ public class MapelActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar1);
 
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Data Mapel");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MapelActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            }
+        });
+
+        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Pilih Pelajaran");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
