@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <View
+        <ImageView
             android:id="@+id/view5"
             android:layout_width="200dp"
             android:layout_height="200dp"
@@ -115,7 +115,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
                 android:layout_width="300dp"
-                android:layout_height="200dp"
+                android:layout_height="210dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 app:cardCornerRadius="10dp"
@@ -144,7 +144,7 @@
                         android:id="@+id/jk_profil"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/tv_jk"
                         android:fontFamily="@font/monster_font"
@@ -167,7 +167,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/jk_profil"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/tv_rombel"
                         android:fontFamily="@font/monster_font"
@@ -182,7 +182,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/monster_font"
-                        android:text="Tempat Tanggal Lahir                   :"
+                        android:text="Tempat/Tanggal Lahir                     :"
                         android:textSize="13dp" />
 
                     <TextView
@@ -190,7 +190,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/nama_rombel"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/tv_ttl"
                         android:fontFamily="@font/monster_font"
@@ -213,8 +213,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/ttl"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
                         android:layout_toRightOf="@+id/tv_alamat"
                         android:text="adjlajdladjladjladaldj"
                         android:textSize="15dp" />

@@ -47,7 +47,7 @@ public class ProfileFragment extends Fragment {
         jk = view.findViewById(R.id.jk_profil);
         rombel = view.findViewById(R.id.nama_rombel);
         ttl = view.findViewById(R.id.ttl);
-//        view5 = view.findViewById(R.id.gambarnya);
+        view5 = view.findViewById(R.id.view5);
         alamat = view.findViewById(R.id.alamat);
         btnlogout = view.findViewById(R.id.btnlogout);
         mApiInterface = UtilsApi.getAPIService();
@@ -68,11 +68,11 @@ public class ProfileFragment extends Fragment {
             jk.setText("Laki-laki");
         }
 
-//        if (jenis_kelamin_siswa.equals("P")){
-//            view5.setImageResource(R.drawable.asais);
-//        }else if(jenis_kelamin_siswa.equals("L")){
-//            view5.setImageResource(R.drawable.laki);
-//        }
+        if (jenis_kelamin_siswa.equals("P")){
+            view5.setImageResource(R.drawable.asais);
+        }else if(jenis_kelamin_siswa.equals("L")){
+            view5.setImageResource(R.drawable.laki);
+        }
 
          tempat_lahir = sharedPreferences.getString("tempat_lahir","6");
         tanggal_lahir = sharedPreferences.getString("tanggal_lahir","7");
