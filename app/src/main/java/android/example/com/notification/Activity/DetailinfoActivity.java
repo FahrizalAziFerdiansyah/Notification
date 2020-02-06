@@ -2,6 +2,7 @@ package android.example.com.notification.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.example.com.notification.Fragment.HomeFragment;
 import android.example.com.notification.Model.Info;
@@ -21,7 +22,7 @@ public class DetailinfoActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     TextView judul, tgl_publish, description;
     ImageView img_Full, img;
-    private String img_info, s_title, s_tglPublish, s_description;
+    private String img_info, s_title, s_tglPublish, s_description, coba;
     private int runTime;
 
     private String build;
@@ -30,6 +31,7 @@ public class DetailinfoActivity extends AppCompatActivity {
     private String[] name;
     private StringBuilder stringBuilder;
 
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +42,7 @@ public class DetailinfoActivity extends AppCompatActivity {
         description = findViewById(R.id.description_detail);
         img = findViewById(R.id.gambar_detail);
         img_Full = findViewById(R.id.gambarfull_detail);
+
 
 //
         Intent m = getIntent();

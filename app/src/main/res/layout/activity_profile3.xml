@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:background="@drawable/gradientbackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/laki"
+        app:layout_constraintBottom_toBottomOf="@+id/view4"
+        app:layout_constraintEnd_toEndOf="@+id/view4"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/view4" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="331dp"
+        android:layout_height="104dp"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view5"
+        app:layout_constraintVertical_bias="0.05">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <br.com.simplepass.loadingbutton.customViews.CircularProgressImageButton
+        android:id="@+id/logog"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="7dp"/>
+
+            <TextView
+                android:fontFamily="@font/monster_font"
+                android:id="@+id/nama_siswa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rendhy Pratama Putra Aji Pratama"
+                android:layout_toRightOf="@+id/logog"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="12dp"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+            <TextView
+                android:fontFamily="@font/monster_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/logog"
+                android:layout_below="@+id/nama_siswa"
+                android:text="0998273636"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="15dp"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detail Profile"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4"
+        app:layout_constraintVertical_bias="0.052" />
+
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="10dp"
+        android:layout_height="255dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:background="@drawable/batang"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cardView"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.157" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.09">
+
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:fontFamily="@font/monster_font"
+                android:id="@+id/tv_jk"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="Jenis Kelamin   :"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="13dp"
+                />
+
+            <TextView
+                android:id="@+id/jk_profil"
+                android:fontFamily="@font/monster_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laki-laki"
+                android:layout_toRightOf="@+id/tv_jk"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="13dp"/>
+            <TextView
+                android:id="@+id/tv_rombel"
+                android:fontFamily="@font/monster_font"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="Nama Rombel   :"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/jk_profil"
+                android:layout_marginTop="10dp"
+                android:textSize="13dp"
+                />
+
+            <TextView
+                android:id="@+id/nama_rombel"
+                android:fontFamily="@font/monster_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1A"
+                android:layout_toRightOf="@+id/tv_rombel"
+                android:layout_below="@+id/jk_profil"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="13dp"/>
+
+            <TextView
+                android:id="@+id/tv_ttl"
+                android:fontFamily="@font/monster_font"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="Tempat Tanggal Lahir                   :"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/nama_rombel"
+                android:layout_marginTop="10dp"
+                android:textSize="13dp"
+                />
+
+            <TextView
+                android:id="@+id/ttl"
+                android:fontFamily="@font/monster_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="adjlajdladjladjladaldj"
+                android:layout_toRightOf="@+id/tv_ttl"
+                android:layout_below="@+id/nama_rombel"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="13dp"/>
+
+            <TextView
+                android:id="@+id/tv_alamat"
+                android:fontFamily="@font/monster_font"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="Alamat               :"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/ttl"
+                android:layout_marginTop="20dp"
+                android:textSize="13dp"
+                />
+
+            <TextView
+                android:id="@+id/alamat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="adjlajdladjladjladaldj"
+                android:layout_toRightOf="@+id/tv_alamat"
+                android:layout_below="@+id/ttl"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:textSize="15dp"/>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnlogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_input"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Keluar"
+        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintStart_toEndOf="@+id/view6"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.112" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
