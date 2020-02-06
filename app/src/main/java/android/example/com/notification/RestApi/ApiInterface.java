@@ -4,6 +4,7 @@ import android.example.com.notification.Model.Absensi;
 import android.example.com.notification.Model.GetAbsensi;
 import android.example.com.notification.Model.GetInfo;
 import android.example.com.notification.Model.GetInfoMapel;
+import android.example.com.notification.Model.GetMapel;
 import android.example.com.notification.Model.GetNotifikasi;
 import android.example.com.notification.Model.GetPelajaran;
 import android.example.com.notification.Model.GetSiswa;
@@ -54,5 +55,11 @@ public interface ApiInterface {
     @POST("Info_mapel/info")
     Call<GetInfoMapel> postInfo(
                                 @Field("id_rombel")String id_rombel);
+
+    @FormUrlEncoded
+    @POST("Mapel")
+    Call<GetMapel> postMapel(
+            @Field("id_rombel")String id_rombel,
+            @Field("id_hari")String id_hari);
 
 }
