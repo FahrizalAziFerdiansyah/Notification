@@ -34,7 +34,8 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("LoginOrtu")
     Call<Siswa> postLogin(@Field("nisn")String nisn,
-                           @Field("password") String password);
+                           @Field("password") String password,
+                          @Field("token") String token);
 
     @GET("List_info")
     Call<GetInfo> getInfo();

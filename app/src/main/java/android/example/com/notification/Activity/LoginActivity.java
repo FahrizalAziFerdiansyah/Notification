@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.example.com.notification.Activity.HomeActivity;
+import android.example.com.notification.Firebase.SharedPrefManager;
 import android.example.com.notification.Fragment.HomeFragment;
 import android.example.com.notification.Model.Siswa;
 import android.example.com.notification.R;
@@ -38,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
   //  SharedPreferences mSettings;
     ApiInterface mApiInterface;
     SharedPreferences.Editor editor;
+    String token;
     SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +80,7 @@ public class LoginActivity extends AppCompatActivity {
         mApiInterface = UtilsApi.getAPIService();
         sharedPreferences = LoginActivity.this.getSharedPreferences("remember", Context.MODE_PRIVATE);
         editor =  sharedPreferences.edit();
+        token = SharedPrefManager.getInstance(LoginActivity.this).getDeviceToken();
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                 progressDialog.setCancelable(false);
                 progressDialog.show();
                 //login
-                retrofit2.Call<Siswa> postLogin= mApiInterface.postLogin(nisn,password);
+                retrofit2.Call<Siswa> postLogin= mApiInterface.postLogin(nisn,password,token);
                 postLogin.enqueue(new Callback<Siswa>() {
                     @Override
                     public void onResponse(Call<Siswa> call, Response<Siswa> response) {
